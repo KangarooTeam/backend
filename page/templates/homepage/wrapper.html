@@ -7,10 +7,8 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons/button.css' %}">
 </head>
 
 <body>
@@ -74,33 +72,33 @@
         {% for post in posts reversed %}
         <div class=container>
             <div class="row">
-                <div class="col-md-4 col-sm-1">
-                    <div class="blog">
-                        <div class="col-md-6 col-sm-1">
-                        </div>
+                <div class="col-md-8">
+                    <div class="post">
                         <h2>{{ post.title }}</h2>
                         <div class="date">
                             <p>{{ post.date }}</p>
                         </div>
-
-                        <div class=container>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h2></h2>
-                                </div>
-                                <p></p>
-                                <div class="col-md-3">
-                                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-link" role="button">Подробней…</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Подробней…</a>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Лучшее за неделю</h2>
+                    <hr class="my-4">
+                    <ul>
+                        <li>example</li>
+                        <li>example</li>
+                        <li>example</li>
+                        <li>example</li>
+                    </ul>
                 </div>
             </div>
         </div>
         {% endfor %}
     </main>
+
+    <footer>
+
+    </footer>
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
