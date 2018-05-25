@@ -1,17 +1,13 @@
-body {
-    padding-left: 1px;
-}
+* {
+  margin: 0;
+  padding: 0; }
 
-h1 a {
-    color: lightslategray;
-}
+main {
+  margin: 10px 0 0 0; }
 
 h1 {
-    text-align:  center;
-}
-.date {
-    text-align:  right;
-}
-.text {
-    text-align:  left;
-}
+  text-align: center; }
+  h1 a {
+    color: lightslategray; }
+
+/*# sourceMappingURL=wrapper.css.map */
