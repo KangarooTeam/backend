@@ -6,9 +6,7 @@
 main {
   margin: 10px 0 0 0; }
 
-h1 {
-  text-align: center; }
-  h1 a {
-    color: lightslategray; }
+a {
+  color: lightslategray; }
 
 /*# sourceMappingURL=wrapper.css.map */
