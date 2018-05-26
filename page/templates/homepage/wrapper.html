@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> styles
 <head>
     <meta charset="UTF-8">
     <title>Kangaroo</title>
     {% load staticfiles %}
+<<<<<<< HEAD
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -75,4 +80,110 @@
     {% endblock %}
 
 </body>
+=======
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons/button.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Kangaroo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    {% block content %}
+
+    <main>
+        <div class=container>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Hello, world!</h1>
+                        <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания
+                            к содержанию или информации.</p>
+                        <hr class="my-4">
+                        <p>Использются служебные классы для типографики и расстояния содержимого в контейнере большего размера.</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+
+        {% for post in posts reversed %}
+        <div class=container>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="post">
+                        <h2>{{ post.title }}</h2>
+                        <div class="date">
+                            <p>{{ post.date }}</p>
+                        </div>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Подробней…</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Лучшее за неделю</h2>
+                    <hr class="my-4">
+                    <ul>
+                        <li>example</li>
+                        <li>example</li>
+                        <li>example</li>
+                        <li>example</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+    {% endblock %}
+    <footer style="padding: 5px; background: #ddd;">
+        Project was created by Kangaroo Team
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+>>>>>>> styles
 </html>
