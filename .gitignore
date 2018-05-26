@@ -1,2 +1,6 @@
 kangaroo/local_settings.py
+<<<<<<< HEAD
 myvenv
+=======
+venv
+>>>>>>> 324a3080feade2adf6da87b0e19a1b4513ca0d1b
