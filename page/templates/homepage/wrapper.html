@@ -74,30 +74,31 @@
 
                         <div class="col-md-6 col-sm-1">
                              {% if post.image %}
-                                 <img src="{{ MEDIA_URL }}{{ post.image.url }}">
+                                 <img width="150px" align="150px" src="{{ MEDIA_URL }}{{ post.image.url }}">
                              {% endif %}
-                          </div>
+                        </div>
 
                         <h2>{{ post.title }}</h2>
                         <div class="date">
                             <p>{{ post.date }}</p>
                         </div>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Подробней…</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Читать…</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <h2>Лучшее за неделю</h2>
-                    <hr class="my-4">
-                    <ul>
-                        <li>example</li>
-                        <li>example</li>
-                        <li>example</li>
-                        <li>example</li>
-                    </ul>
-                </div>
+
             </div>
         </div>
         {% endfor %}
+        <div class="col-md-4">
+            <h2>Лучшее за неделю</h2>
+            <hr class="my-4">
+            <ul>
+                <li>example</li>
+                <li>example</li>
+                <li>example</li>
+                <li>example</li>
+            </ul>
+        </div>
     </main>
 
     {% endblock %}

@@ -82,7 +82,7 @@ try:
 except ImportError:
     pass
 
-if DEBUG is False:
+if not DEBUG:
     ALLOWED_HOSTS = ['sth.com']
     DATABASES = {
         'default': {

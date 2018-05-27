@@ -6,7 +6,7 @@ class Articles(models.Model):
     body = models.TextField()
     date = models.DateTimeField()
     image = models.ImageField(
-        blank=True, upload_to='images/',
+        blank=True, upload_to='images/%Y/%m/%d/',
         help_text='150x150px',
         verbose_name='Ссылка картинки'
     )

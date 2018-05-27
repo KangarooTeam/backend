@@ -1,3 +1,4 @@
 kangaroo/local_settings.py
 myvenv
 venv
+page/static/media/images
