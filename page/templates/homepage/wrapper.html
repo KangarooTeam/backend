@@ -89,6 +89,24 @@
             </div>
         </div>
         {% endfor %}
+
+
+    <div class="container-fluid">
+    <div style="align: center">
+        <div class="pagination">
+            <span class="step-links">
+                {% if posts.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}">< назад</a>
+                {% endif %}
+                <span class="current">
+                     {{ posts.number }} из {{ posts.paginator.num_pages }}.
+                </span>
+                {% if posts.has_next %}
+                    <a href="?page={{ posts.next_page_number }}">вперед ></a>
+                {% endif %}
+            </span></div></div>
+    </div>
+
         <div class="col-md-4">
             <h2>Лучшее за неделю</h2>
             <hr class="my-4">
