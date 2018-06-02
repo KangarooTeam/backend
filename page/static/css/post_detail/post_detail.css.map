@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,CAAE;EACE,UAAU,EAAE,OAAO",
+"sources": ["post_detail.scss"],
 "names": [],
 "file": "post_detail.css"
 }

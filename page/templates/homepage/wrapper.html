@@ -96,7 +96,7 @@
                         <div class="date">
                             <p>{{ post.date }}</p>
                         </div>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Читать…</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
                     </div>
                 </div>
 
@@ -127,33 +127,37 @@
     {% endblock %}
 
     <footer>
-        <div class="container">
-                Project was created by Kangaroo Team
+        <hr class="my-4">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
-                    <h4>Links</h4>
+                <div class="col-md-4">
+                    <a href="#"><h1>Kangaroo</h1></a>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
                     <ul>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                        <li type="none">link</li>
-                    </ul>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quisquam ut</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
                 </div>
             </div>
         </div>
     </footer>
 
-    
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

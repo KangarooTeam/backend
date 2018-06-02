@@ -14,8 +14,15 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 main {
     margin: 10px 0 0 0;
+    flex: 1 0 auto;
 }
 
 a {
@@ -23,5 +30,15 @@ a {
 }
 
 footer {
-    padding: 25px;
+    flex: 0 0 auto;
+    padding: 0 25px;
+    a {
+        text-decoration: none;
+    }
+}
+p {
+    text-align: justify;
+}
+.post {
+    margin-top: 20px;
 }
