@@ -66,6 +66,21 @@
             </div>
         </div>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>Лучшее за неделю</h2>
+                    <ul>
+                        <li type="none">posts</li>
+                        <li type="none">posts</li>
+                        <li type="none">posts</li>
+                        <li type="none">posts</li>
+                    </ul>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+
         {% for post in posts reversed %}
         <div class=container>
             <div class="row">
@@ -73,16 +88,15 @@
                     <div class="post">
 
                         <div class="col-md-6 col-sm-1">
-                             {% if post.image %}
-                                 <img width="150px" align="150px" src="{{ MEDIA_URL }}{{ post.image.url }}">
-                             {% endif %}
+                            {% if post.image %}
+                            <img width="150px" align="150px" src="{{ MEDIA_URL }}{{ post.image.url }}"> {% endif %}
                         </div>
 
                         <h2>{{ post.title }}</h2>
                         <div class="date">
                             <p>{{ post.date }}</p>
                         </div>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn-1">Читать…</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
                     </div>
                 </div>
 
@@ -90,39 +104,60 @@
         </div>
         {% endfor %}
 
+        <br>
+        <br>
 
-    <div class="container-fluid">
-    <div style="align: center">
-        <div class="pagination">
-            <span class="step-links">
-                {% if posts.has_previous %}
-                    <a href="?page={{ posts.previous_page_number }}">< назад</a>
-                {% endif %}
-                <span class="current">
-                     {{ posts.number }} из {{ posts.paginator.num_pages }}.
-                </span>
-                {% if posts.has_next %}
+        <div class="container">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if posts.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}"> назад</a>
+                    {% endif %}
+                    <span class="current">
+                        {{ posts.number }} из {{ posts.paginator.num_pages }}.
+                    </span>
+                    {% if posts.has_next %}
                     <a href="?page={{ posts.next_page_number }}">вперед ></a>
-                {% endif %}
-            </span></div></div>
-    </div>
-
-        <div class="col-md-4">
-            <h2>Лучшее за неделю</h2>
-            <hr class="my-4">
-            <ul>
-                <li>example</li>
-                <li>example</li>
-                <li>example</li>
-                <li>example</li>
-            </ul>
+                    {% endif %}
+                </span>
+            </div>
         </div>
     </main>
 
     {% endblock %}
-    <footer style="padding: 5px; background: #ddd;">
-        Project was created by Kangaroo Team
+
+    <footer>
+        <hr class="my-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#"><h1>Kangaroo</h1></a>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                    <ul>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
+                        <li>link</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quisquam ut</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                </div>
+                <div class="col-md-2">
+                    <h5>title</h5>
+                </div>
+            </div>
+        </div>
     </footer>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

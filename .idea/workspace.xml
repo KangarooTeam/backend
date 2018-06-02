@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1548a218-3c7a-4720-8d27-865b0eb0f350" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/38e036d1a9829fad2395a124222a9c2b86226b98/post_detail.scssc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/4adcfbea997f3a6b99707414a7dd98c764caaf05/button.scssc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/7b307001925e2b3403638e7af715fa779d8ccb83/wrapper.scssc" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/kangaroo/local_settings.py" afterPath="$PROJECT_DIR$/kangaroo/local_settings.py" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.css" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.css" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.css.map" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.css.map" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.scss" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.scss" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css.map" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css.map" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.scss" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.scss" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css.map" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css.map" />
+      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.scss" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.scss" />
+      <change beforePath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" afterPath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
+      <change beforePath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" afterPath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1085">
-              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="-187">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,11 +104,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kangaroo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
               <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Документы/Downloads/local_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -127,11 +163,11 @@
         <option value="$PROJECT_DIR$/page/local_settings.py" />
         <option value="$PROJECT_DIR$/page/admin.py" />
         <option value="$PROJECT_DIR$/page/models.py" />
-        <option value="$PROJECT_DIR$/kangaroo/local_settings.py" />
         <option value="$PROJECT_DIR$/kangaroo/settings.py" />
         <option value="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
         <option value="$PROJECT_DIR$/page/views.py" />
         <option value="$PROJECT_DIR$/page/templates/homepage/wrapper.html" />
+        <option value="$PROJECT_DIR$/kangaroo/local_settings.py" />
       </list>
     </option>
   </component>
@@ -270,13 +306,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37821484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19515885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -319,14 +356,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/page/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -622,22 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kangaroo/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/templates/homepage/post_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -662,14 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1085">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -682,6 +687,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kangaroo/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Документы/Downloads/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
       </provider>
