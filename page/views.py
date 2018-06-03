@@ -32,7 +32,7 @@ def post_detail(request, pk):
 
 class RegisterFormView(FormView):
     form_class = UserCreationForm
-    success_url = "/login/"
+    success_url = "homepage/login/"
     template_name = "homepage/register.html"
 
     def form_valid(self, form):
