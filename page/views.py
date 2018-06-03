@@ -8,6 +8,8 @@ from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.views.generic.base import View
 from django.contrib.auth import logout
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
 def index(request):
     posts = Articles.objects.all()
@@ -54,3 +56,23 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return HttpResponseRedirect("/")
+
+from django.shortcuts import render_to_response
+
+def search_form(request):
+    return render_to_response('homepage/search_form.html')
+
+def search(request):
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        res = Articles.objects.filter(title__icontains=q)
+        return render_to_response('search_results.html',
+            {'res': res , 'query': q})
+    else:
+        return HttpResponse('Please submit a search term.')
+# BAD!
+def bad_search(request):
+    # The following line will raise KeyError if 'q' hasn't
+    # been submitted!
+    message = 'You searched for: %r' % request.GET['q']
+    return HttpResponse(message)

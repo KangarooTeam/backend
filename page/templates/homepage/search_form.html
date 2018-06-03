@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if rea %}
+    <p>Found {{ res|length }} book{{ res|pluralize }}.</p>
+    <ul>
+        {% for r in res %}
+        <li>{{ r.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
+</body>
+</html>
