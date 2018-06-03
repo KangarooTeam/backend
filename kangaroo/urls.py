@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^post$/', TemplateView.as_view(template_name = 'homepage/post_detail.html')),
     url(r'^', include('page.urls')),
-    url(r'^index$/', include('page.urls'))
+    url(r'^index$/', include('page.urls')),
+    url(r'^register/', include('page.urls'))
 ]

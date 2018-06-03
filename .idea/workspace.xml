@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1548a218-3c7a-4720-8d27-865b0eb0f350" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/38e036d1a9829fad2395a124222a9c2b86226b98/post_detail.scssc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/4adcfbea997f3a6b99707414a7dd98c764caaf05/button.scssc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/page/static/.sass-cache/7b307001925e2b3403638e7af715fa779d8ccb83/wrapper.scssc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/templates/homepage/login.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/templates/homepage/register.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/kangaroo/local_settings.py" afterPath="$PROJECT_DIR$/kangaroo/local_settings.py" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.css" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.css" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.css.map" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.css.map" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/buttons/button.scss" afterPath="$PROJECT_DIR$/page/static/css/buttons/button.scss" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css.map" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.css.map" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.scss" afterPath="$PROJECT_DIR$/page/static/css/post_detail/post_detail.scss" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css.map" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.css.map" />
-      <change beforePath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.scss" afterPath="$PROJECT_DIR$/page/static/css/wrapper/wrapper.scss" />
-      <change beforePath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" afterPath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
+      <change beforePath="$PROJECT_DIR$/kangaroo/urls.py" afterPath="$PROJECT_DIR$/kangaroo/urls.py" />
+      <change beforePath="$PROJECT_DIR$/page/models.py" afterPath="$PROJECT_DIR$/page/models.py" />
       <change beforePath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" afterPath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change beforePath="$PROJECT_DIR$/page/urls.py" afterPath="$PROJECT_DIR$/page/urls.py" />
+      <change beforePath="$PROJECT_DIR$/page/views.py" afterPath="$PROJECT_DIR$/page/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/page/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -67,18 +58,18 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="153">
+              <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="131" column="19" lean-forward="false" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -114,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -306,7 +297,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -661,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        <state relative-caret-position="153">
+          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -678,7 +668,7 @@
     <entry file="file://$PROJECT_DIR$/page/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -707,18 +697,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
+    <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="131" column="19" lean-forward="false" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
+    <entry file="file://$PROJECT_DIR$/kangaroo/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
