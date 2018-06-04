@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%  block content %}
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+        {% if result_title %}
+    <p>Найдено {{ result_title|length }} совпадение {{ result_title|pluralize }}.</p>
+    <ul>
+        {% for res_t in result_title %}
+        <li>{{ res_t.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>По вашему запросу ничего не найденно!</p>
+{% endif %}
+
+    {% endblock %}
+</body>
+</html>

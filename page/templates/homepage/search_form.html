@@ -9,7 +9,7 @@
     </form>
 <p>You searched for: <strong>{{ query }}</strong></p>
 
-{% if rea %}
+{% if res %}
     <p>Found {{ res|length }} book{{ res|pluralize }}.</p>
     <ul>
         {% for r in res %}
