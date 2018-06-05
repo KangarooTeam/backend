@@ -7,12 +7,18 @@
 <body>
     {%  block content %}
 
-<p>You searched for: <strong>{{ query }}</strong></p>
-        {% if result_title %}
-    <p>Найдено {{ result_title|length }} совпадение {{ result_title|pluralize }}.</p>
+<p>По вашему поиску: <strong>{{ query }}</strong></p>
+        {% if result_title or result_body%}
+    <p>Найдено {{ result_title|length }} результатов {{ result_title|pluralize }}.</p>
     <ul>
         {% for res_t in result_title %}
         <li>{{ res_t.title }}</li>
+        {% endfor %}
+    </ul>
+    <p>Найдено {{ result_body|length }}  результатов {{ result_body|pluralize }}.</p>
+    <ul>
+        {% for res_b in result_body %}
+        <li>{{ res_b.body }}</li>
         {% endfor %}
     </ul>
 {% else %}

@@ -65,11 +65,16 @@ def search_form(request):
 def search(request):
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
-        result_title = Articles.objects.filter(title__icontains=q)
-        #result_body = Articles.objects.filter(body__icontains=q)
-        return render_to_response ('homepage/search_results.html',
-            {'result_title': result_title, 'query': q})
-    # 'result_body': result_body,
+        query = q.split()
+        for q in query:
+            result_title = Articles.objects.filter(title__icontains=q)
+            result_body = Articles.objects.filter(body__icontains=q)
+            if result_title:
+                return render_to_response ('homepage/search_results.html',
+                    {'result_title': result_title, 'query': q})
+            if result_body:
+                return render_to_response ('homepage/search_results.html',
+                    {'result_body': result_body})
     else:
         return HttpResponse('Please submit a search term.')
 # BAD!
