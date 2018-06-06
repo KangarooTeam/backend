@@ -59,8 +59,25 @@ class LogoutView(View):
 
 from django.shortcuts import render_to_response
 
-def search_form(request):
-    return render_to_response('homepage/search_form.html')
+"""
+def search(request):
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        query = q.split()
+        result = []
+        for q in query:
+            result_title = Articles.objects.filter(title__icontains=q)
+            result_body = Articles.objects.filter(body__icontains=q)
+            result.append(result_body)
+            result.append(result_title)
+            result.split()
+           if result_title:
+                return render_to_response ('homepage/search_results.html',
+                    {'result_title': result_title, 'query': q})
+            if result_body:
+            return render_to_response ('homepage/search_results.html',
+                    {'result': result})
+                    """
 
 def search(request):
     if 'q' in request.GET and request.GET['q']:
