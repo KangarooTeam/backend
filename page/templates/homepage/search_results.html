@@ -7,26 +7,19 @@
 <body>
     {%  block content %}
 
-<p>По вашему поиску: <strong>{{ query }}</strong></p>
-        {% if result_title or result_body%}
-
-    <p>Найдено {{ result_title|length }} результатов {{ result_title|pluralize }}.</p>
-    <p>Найдено {{ result_body|length }}  результатов {{ result_body|pluralize }}.</p>
-
-    <ul>
-        {% for res_t in result_title %}
-        <li>{{ res_t.title }}</li>
-             <ul>
-                {% for res_b in result_body %}
-               <li>{{ res_b.body }}</li>
-                {% endfor %}
-            </ul>
+<div class="container">
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Найденные результаты: {{ result.count }}</h3>
+        {% for res in result %}
+            <h4><a href="{{ res.get.absolute_url }}"/> {{ res.title }}</h4>
         {% endfor %}
-    </ul>
+    </div>
 
-{% else %}
-    <p>По вашему запросу ничего не найденно!</p>
-{% endif %}
+</div>
+
+        </div>
+
 
     {% endblock %}
 </body>

@@ -58,45 +58,20 @@ class LogoutView(View):
         return HttpResponseRedirect("/")
 
 from django.shortcuts import render_to_response
+from django.db.models import Q
 
-"""
-def search(request):
-    if 'q' in request.GET and request.GET['q']:
-        q = request.GET['q']
-        query = q.split()
-        result = []
-        for q in query:
-            result_title = Articles.objects.filter(title__icontains=q)
-            result_body = Articles.objects.filter(body__icontains=q)
-            result.append(result_body)
-            result.append(result_title)
-            result.split()
-           if result_title:
-                return render_to_response ('homepage/search_results.html',
-                    {'result_title': result_title, 'query': q})
-            if result_body:
-            return render_to_response ('homepage/search_results.html',
-                    {'result': result})
-                    """
+class Search(View):
+    template_name ="search_result.html"
 
-def search(request):
-    if 'q' in request.GET and request.GET['q']:
-        q = request.GET['q']
-        query = q.split()
-        for q in query:
-            result_title = Articles.objects.filter(title__icontains=q)
-            result_body = Articles.objects.filter(body__icontains=q)
-            if result_title:
-                return render_to_response ('homepage/search_results.html',
-                    {'result_title': result_title, 'query': q})
-            if result_body:
-                return render_to_response ('homepage/search_results.html',
-                    {'result_body': result_body})
-    else:
-        return HttpResponse('Please submit a search term.')
-# BAD!
-def bad_search(request):
-    # The following line will raise KeyError if 'q' hasn't
-    # been submitted!
-    message = 'You searched for: %r' % request.GET['q']
-    return HttpResponse(message)
+    def get(self, request, *args, **kwargs):
+        query = self.request.GET.get('q')
+
+        result = Articles.objects.filter(
+            Q(title__icontains=query)|
+            Q(body__icontains=query))
+
+        context = {
+            "result" : result
+        }
+
+        return render(self.request, self.template_name, context)
