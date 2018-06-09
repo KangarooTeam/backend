@@ -32,32 +32,32 @@ def post_detail(request, pk):
     post = get_object_or_404(Articles, pk=pk)
     return render(request, 'homepage/post_detail.html', {'post': post})
 
-class RegisterFormView(FormView):
-    form_class = UserCreationForm
-    success_url = "homepage/login/"
-    template_name = "homepage/register.html"
+def test_cookie(request):   
+    if not request.COOKIES.get('color'):
+        response = HttpResponse("Cookie Set")
+        response.set_cookie('color', 'blue', 3600 * 24 * 365 * 2)
+        return response
+    else:
+        return HttpResponse("Your favorite color is {0}".format(request.COOKIES['color']))
 
-    def form_valid(self, form):
-        form.save()
-        return super(RegisterFormView, self).form_valid(form)
+def track_user(request):
+    if not request.COOKIES.get('visits'):
+        response = HttpResponse("This is your first visit to the site. "
+                                "From now on I will track your vistis to this site.")
+        response.set_cookie('visits', '1', 3600 * 24 * 365 * 2)
+    else:
+        visits = int(request.COOKIES.get('visits')) + 1
+        response = HttpResponse("This is your {0} visit".format(visits))
+        response.set_cookie('visits', str(visits),  3600 * 24 * 365 * 2)
+    return response
 
-class LoginFormView(FormView):
-    form_class = AuthenticationForm
-    template_name = "homepage/login.html"
-    success_url = "/"
-
-    def form_valid(self, form):
-        self.user = form.get_user()
-
-        login(self.request, self.user)
-        return super(LoginFormView, self).form_valid(form)
-
-class LogoutView(View):
-    def get(self, request):
-        logout(request)
-        return HttpResponseRedirect("/")
-
-from django.shortcuts import render_to_response
+def stop_tracking(request):
+    if request.COOKIES.get('visits'):
+       response = HttpResponse("Cookies Cleared")
+       response.delete_cookie("visits")
+    else:
+        response = HttpResponse("We are not tracking you.")
+    return response
 
 """
 def search(request):

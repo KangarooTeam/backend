@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^', include('page.urls')),
     url(r'^index$/', include('page.urls')),
     url(r'^search/$/', include('page.urls')),
-    url(r'^register/', include('page.urls'))
+    url(r'^cookie/$', include('page.urls')),
+    url(r'^track_user/$', include('page.urls')),
+    url(r'^stop_tracking/$', include('page.urls')),
 ]
