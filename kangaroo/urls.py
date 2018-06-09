@@ -23,5 +23,15 @@ urlpatterns = [
     url(r'^', include('page.urls')),
     url(r'^index$/', include('page.urls')),
     url(r'^search/$/', include('page.urls')),
-    #url(r'^register/', include('page.urls'))
+    url(r'^cookie/$', include('page.urls')),
+    url(r'^track_user/$', include('page.urls')),
+    url(r'^stop_tracking/$', include('page.urls')),
+    url(r'^test_delete/$', include('page.urls')),
+    url(r'^test_session/$/', include('page.urls')),
+    url(r'^save-session-data/$', include('page.urls')),
+    url(r'^access-session-data/$', include('page.urls')),
+    url(r'^delete-session/$', include('page.urls')),
+    url(r'^lousy-login/$', include('page.urls')),
+    url(r'^lousy-secret/$', include('page.urls')),
+    url(r'^lousy-logout/$', include('page.urls')),
 ]
