@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^', include('page.urls')),
     url(r'^index$/', include('page.urls')),
     url(r'^search/$/', include('page.urls')),
-    url(r'^register/', include('page.urls'))
+    #url(r'^register/', include('page.urls'))
 ]
