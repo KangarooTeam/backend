@@ -31,6 +31,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Articles, pk=pk)
     return render(request, 'homepage/post_detail.html', {'post': post})
 
+
 class CookiesKangaroo:
 
     def test_cookie(self, request):   
@@ -131,21 +132,14 @@ class LousyKangaroo:
             return redirect('lousy_login')
         return render(request, 'lousy/lousy_logout.html')
 
-from django.shortcuts import render_to_response
+
 from django.db.models import Q
-
-class Search(View):
-    template_name ="search_result.html"
-
-    def get(self, request, *args, **kwargs):
-        query = self.request.GET.get('q')
-
-        result = Articles.objects.filter(
-            Q(title__icontains=query)|
-            Q(body__icontains=query))
-
-        context = {
-            "result" : result
-        }
-
-        return render(self.request, self.template_name, context)
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+def search(request):
+     q = request.GET['q']
+     result = Articles.objects.filter(
+         Q(title__icontains=q)|
+         Q(body__icontains=q))
+     return render_to_response ('homepage/search.html',
+                              {"result": result, 'q': q})

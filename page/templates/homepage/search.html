@@ -7,15 +7,15 @@
 </head>
 
 <body>
+{% extends 'homepage/wrapper.html' %}
     {% block content %}
 
-<<<<<<< HEAD
 <div class="container">
 <div class="row">
     <div class="col-sm-12">
         <h3>Найденные результаты: {{ result.count }}</h3>
         {% for res in result %}
-            <h4><a href="{{ res.get_absolute_url }}"/> {{ res.title }}</h4>
+            <h4><a href="{{ res.get_absolute_url }}"></a> {{ res.title }}</h4>
         {% endfor %}
     </div>
 

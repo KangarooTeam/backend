@@ -19,19 +19,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^post$/', TemplateView.as_view(template_name = 'homepage/post_detail.html')),
-    url(r'^', include('page.urls')),
-    url(r'^index$/', include('page.urls')),
-    url(r'^search/$/', include('page.urls')),
-    url(r'^cookie/$', include('page.urls')),
-    url(r'^track_user/$', include('page.urls')),
-    url(r'^stop_tracking/$', include('page.urls')),
-    url(r'^test_delete/$', include('page.urls')),
-    url(r'^test_session/$/', include('page.urls')),
-    url(r'^save-session-data/$', include('page.urls')),
-    url(r'^access-session-data/$', include('page.urls')),
-    url(r'^delete-session/$', include('page.urls')),
-    url(r'^lousy-login/$', include('page.urls')),
-    url(r'^lousy-secret/$', include('page.urls')),
-    url(r'^lousy-logout/$', include('page.urls')),
+    url(r'', include('page.urls'))
 ]
