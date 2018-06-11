@@ -10,6 +10,13 @@
 {% extends 'homepage/wrapper.html' %}
     {% block content %}
 
+        <div class="container">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
+                <span class="breadcrumb-item active"> Поиск</span>
+            </nav>
+        </div>
+
 <div class="container">
 <div class="row">
     <div class="col-sm-12">
