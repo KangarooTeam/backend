@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Результаты поиска</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <div class="col-sm-12">
         <h3>Найденные результаты: {{ result.count }}</h3>
         {% for res in result %}
-            <h4><a href="{{ res.get_absolute_url }}"> {{ res.title }}</a></h4>
+            <h4><a href="{{ res.get_absolute_url }}">{{ res.title }}</a></h4>
             <h6>{{ res.body | truncatewords:20 }}</h6>
         {% endfor %}
     </div>

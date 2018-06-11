@@ -22,3 +22,6 @@ class Articles(models.Model):
 
     image_img.short_description = 'Картинка'
     image_img.allow_tags = True
+
+    def get_absolute_url(self):
+        return "/post/%i/" % self.id
