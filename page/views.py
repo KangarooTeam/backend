@@ -139,10 +139,18 @@ from django.shortcuts import render_to_response
 
 def search(request):
      q = request.GET['q']
-     result = Articles.objects.filter(
-         Q(title__icontains=q)|
-         Q(body__icontains=q))
+     if q:
+         if len(q.split()) < 2:
+             result = Articles.objects.filter(
+                 Q(title__icontains=q)|
+                 Q(body__icontains=q))
+         else:
+             result = ["Внимание! \r\n Поиск работает только по одному ключевому слову. \r\n Введите ключевое слово, в поисковой строке и повторите запрос!"]
+     else:
+         result = ["К СОЖАЛЕНИЮ СТРОКА ПОИСКА ОКАЗАЛОСЬ ПУСТОЙ, ВВЕДИТЕ КЛЮЧЕВОЕ СЛОВО, И ПОВТОРИТЕ ЗАПРОС!"]
+
      return render_to_response ('homepage/search.html',
                               {"result": result, 'q': q})
 
 
+#Q(нужноеполе_in=[слово1, слово2])
