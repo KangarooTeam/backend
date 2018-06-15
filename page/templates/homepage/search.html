@@ -20,11 +20,23 @@
 <div class="container">
 <div class="row">
     <div class="col-sm-12">
+    {% if result %}
         <h3>Найденные результаты: {{ result.count }}</h3>
         {% for res in result %}
             <h4><a href="{{ res.get_absolute_url }}">{{ res.title }}</a></h4>
             <h6>{{ res.body | truncatewords:20 }}</h6>
         {% endfor %}
+    {% else %}
+        <h3 align="center">Внимание!</h3>
+        <h4>Строка поиска принимает только одно ключевое слово.</h4>
+        <h4>Возможно строка поиска была пустой, повторите запрос:</h4>
+        <div>
+            <form class="form-inline" action="/search/" method="get">
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
+            </form>
+        </div>
+    {% endif %}
     </div>
 
 </div>
