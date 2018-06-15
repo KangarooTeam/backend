@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="{% static 'css/post_detail/post_detail.css' %}">
 </head>
 {% endblock %}
-
+<style>
+    .imgpost{
+        margin-left: 30%;
+    }
+</style>
 <body>
     <main>
         {% block content %}
@@ -22,7 +26,9 @@
             <div class="container">
                 <h1>{{ post.title }}</h1>
                 {% if post.image %}
-                <img width="300px" align="300px" src="{{ MEDIA_URL }}{{ post.image.url }}"> {% endif %}
+                    <div class="container"><div class="row"><div class="imgpost">
+                <img height="300px" src="{{ MEDIA_URL }}{{ post.image.url }}"> {% endif %}
+                </div></div></div>
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <p>{{ post.body|linebreaksbr }}</p>
