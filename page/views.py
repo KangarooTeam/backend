@@ -12,9 +12,8 @@ from django.views.generic.base import View
 
 def index(request):
     posts = Articles.objects.all()
-    paginator = Paginator(posts, 3)
-    page = request.GET.get('page')
-
+    posts_r = [r for r in reversed(posts)]
+    paginator = Paginator(posts_r, 3)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)

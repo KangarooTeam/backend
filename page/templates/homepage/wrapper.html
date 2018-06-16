@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons/button.css' %}">
 </head>
+<style>
+    .title_block {
+        margin-left: 5%;
+    }
+    .button_read {
+        margin-left: 40%;
+    }
+    .img_block {
+        margin-left: 5%;
+    }
+    .date {
+        margin-left: 30%;
+    }
+    .test {
+        margin-left: 70%;
+    }
+</style>
 <p></p>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -86,23 +103,25 @@
             </div>
         </div>
 
-        {% for post in posts reversed %}
+        {% for post in posts %}
         <div class=container>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="post">
 
-                        <div class="col-md-6 col-sm-1">
-                            {% if post.image %}
-                            <img width="150px" align="150px" src="{{ MEDIA_URL }}{{ post.image.url }}"> {% endif %}
-                        </div>
+                    <div class="container"><div class="row">
+                        <div class="title_block"><h2>{{ post.title }}</h2></div>
+                    </div></div>
+                                <div class="img_block">
+                                    <h6>{{ post.body | truncatechars:40 }}</h6>
+                                </div>
 
-                        <h2>{{ post.title }}</h2>
                         <div class="date">
                             <p>{{ post.date }}</p>
                         </div>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
-                    </div>
+                        <div class="container"><div class="row">
+                            <div class="button_read"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a></div>
+                        </div></div></div>
                 </div>
 
             </div>
