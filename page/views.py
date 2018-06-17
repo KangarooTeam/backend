@@ -46,13 +46,17 @@ def register(request):
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+import re
 
 def search(request):
      q = request.GET['q']
+     res = [i for i in q.split()]
      if q:
-         result = Articles.objects.filter(
-             Q(title__icontains=q)|
-             Q(body__icontains=q))
+         result = []
+         for j in res:
+             result.append(Articles.objects.filter(
+                 Q(title__icontains=j)|
+                 Q(body__icontains=j)))
      else:
          result = False
 
