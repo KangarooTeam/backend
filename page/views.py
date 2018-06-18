@@ -13,6 +13,7 @@ from django.views.generic.base import View
 def index(request):
     posts = Articles.objects.all()
     posts_r = [r for r in reversed(posts)]
+    last_post = posts_r[0]
     paginator = Paginator(posts_r, 3)
     page = request.GET.get('page')
     try:
@@ -23,7 +24,7 @@ def index(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         posts = paginator.page(paginator.num_pages)
-    return render(request, 'homepage/wrapper.html', {'posts': posts})
+    return render(request, 'homepage/wrapper.html', {'posts': posts, "last_post": last_post})
 
 
 def post_detail(request, pk):
@@ -53,6 +54,7 @@ def search(request):
      res = [i for i in q.split()]
      if q:
          result = []
+         cash = []
          for j in res:
              result.append(Articles.objects.filter(
                  Q(title__icontains=j)|
@@ -61,7 +63,7 @@ def search(request):
          result = False
 
      return render_to_response ('homepage/search.html',
-                              {"result": result, 'q': q})
+                              {"result": result, 'q': q, "cash": cash})
 
 
 #Q(нужноеполе_in=[слово1, слово2])

@@ -12,13 +12,13 @@
         margin-left: 5%;
     }
     .button_read {
-        margin-left: 40%;
+        margin-left: 65%;
     }
     .img_block {
         margin-left: 5%;
     }
     .date {
-        margin-left: 30%;
+        margin-left: 50%;
     }
     .test {
         margin-left: 70%;
@@ -73,13 +73,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <h1 class="display-4">Hello, world!</h1>
-                        <p class="lead">Это простой пример блока с компонентом в стиле jumbotron для привлечения дополнительного внимания
-                            к содержанию или информации.</p>
+                        <h1 class="display-4">Последняя новость</h1>
+                        <p>{{ last_post.date }}</p>
+                        <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
                         <hr class="my-4">
-                        <p>Использются служебные классы для типографики и расстояния содержимого в контейнере большего размера.</p>
+                        <p>{{ last_post.body | truncatechars:300}}</p>
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                            <a class="btn btn-primary btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
                         </p>
                     </div>
 
@@ -110,10 +110,10 @@
                     <div class="post">
 
                     <div class="container"><div class="row">
-                        <div class="title_block"><h2>{{ post.title }}</h2></div>
+                        <div class="title_block"><h4>{{ post.title | truncatechars:55 }}</h4></div>
                     </div></div>
                                 <div class="img_block">
-                                    <h6>{{ post.body | truncatechars:40 }}</h6>
+                                    <h6>{{ post.body | truncatechars:70 }}</h6>
                                 </div>
 
                         <div class="date">

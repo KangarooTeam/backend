@@ -27,12 +27,15 @@
                 <h1>{{ post.title }}</h1>
                 {% if post.image %}
                     <div class="container"><div class="row"><div class="imgpost">
-                <img height="300px" src="{{ MEDIA_URL }}{{ post.image.url }}"> {% endif %}
+                <img height="300px" src="{{ MEDIA_URL }}{{ post.image.url }}">
                 </div></div></div>
+                {% endif %}
+            <div class="container">
+                            <div class="row">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-12">
+                    <div class="col-md-8"> <p></p>
                         <p>{{ post.body|linebreaksbr }}</p>
-                        <div class="post_detail_menu"></div>
+                        <div class="post_detail_menu"></div></div></div>
 
                         {% if post.date %}
                         <div class="container">
