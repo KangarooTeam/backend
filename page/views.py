@@ -63,7 +63,7 @@ def search(request):
          result = False
 
      return render_to_response ('homepage/search.html',
-                              {"result": result, 'q': q, "cash": cash})
+                              {"result": result, 'q': q})
 
 
 #Q(нужноеполе_in=[слово1, слово2])
