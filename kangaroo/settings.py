@@ -89,14 +89,14 @@ except ImportError:
     pass
 
 if not DEBUG:
-    ALLOWED_HOSTS = ['sth.com']
+    ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'namedb',
+            'NAME': 'test',
             'USER': 'postgres',
-            'PASSWORD': 'password',
-            'HOST': '0.0.0.0',
+            'PASSWORD': 'q319546',
+            'HOST': 'localhost',
             'PORT': '5432',
         }
     }

@@ -67,3 +67,11 @@ def search(request):
 
 
 #Q(нужноеполе_in=[слово1, слово2])
+from django.http import HttpResponseNotFound
+from django.shortcuts import render_to_response
+from page.errors import error404
+
+def handler404(request):
+    return HttpResponseNotFound(
+        error404()
+    )
