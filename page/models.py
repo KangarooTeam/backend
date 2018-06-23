@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django import forms
 
 class Articles(models.Model):
     title = models.CharField(max_length=120)
