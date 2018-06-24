@@ -17,27 +17,29 @@
     <main>
         {% block content %}
         <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
             <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
                 <span class="breadcrumb-item active">{{ post.title }}</span>
-            </nav>
+            </nav></div></div>
         </div>
 
         <div class="post">
             <div class="container">
                 <h1>{{ post.title }}</h1>
-                {% if post.image %}
+                {% if post.image.url %}
                 <div class="container">
                     <div class="row">
                         <div class="imgpost">
-                            <img height="300px" src="{{ MEDIA_URL }}{{ post.image.url }}">
+                            <img height="275px" width="700px" src="{{ MEDIA_URL }}{{ post.image.url }}">
                         </div>
                     </div>
                 </div>
                 {% endif %}
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <p></p>
                             <p>{{ post.body|linebreaksbr }}</p>
                             <div class="post_detail_menu"></div>

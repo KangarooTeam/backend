@@ -95,9 +95,9 @@ if not DEBUG:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'test',
             'USER': 'postgres',
-            'PASSWORD': 'qwerty123',
+            'PASSWORD': 'q319546',
             'HOST': 'localhost',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
 

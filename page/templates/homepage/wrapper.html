@@ -5,9 +5,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
-    <link rel="stylesheet" href="{% static 'css/buttons/button.css' %}">
 </head>
-
+<style>
+    .date {
+  margin-left: 65%;
+}
+    .button_read {
+        margin-left: 75%;
+    }
+</style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="navbar-brand">
@@ -72,7 +78,7 @@
         {% for post in posts %}
         <div class=container>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <div class="post">
 
                         <div class="container">
@@ -83,7 +89,7 @@
                             </div>
                         </div>
                         <div class="img_block">
-                            <h6>{{ post.body | truncatechars:70 }}</h6>
+                            <h6>{{ post.body | truncatechars:100 }}</h6>
                         </div>
 
                         <div class="date">

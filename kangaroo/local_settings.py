@@ -1,7 +1,7 @@
 from kangaroo.settings import *
 
 ALLOWED_HOSTS = ['*']
-DEBUG = False
+DEBUG = True
 INSTALLED_APPS
 DATABASES = {
     'default': {
