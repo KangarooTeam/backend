@@ -14,17 +14,19 @@ from django import forms
 def index(request):
     posts = Articles.objects.all()
     posts_r = [r for r in reversed(posts)]
-    last_post = posts_r[0]
-    paginator = Paginator(posts_r, 3)
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        posts = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        posts = paginator.page(paginator.num_pages)
+    last_post = None
+    if len(posts_r) > 0:
+        last_post = posts_r[0]
+        paginator = Paginator(posts_r, 3)
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            posts = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            posts = paginator.page(paginator.num_pages)
     return render(request, 'homepage/wrapper.html', {'posts': posts, "last_post": last_post})
 
 
