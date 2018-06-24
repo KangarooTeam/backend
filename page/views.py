@@ -89,7 +89,7 @@ def register(request):
 
     else:
         form = RegistrationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'accounts/reg_form.html', {'form': form})
 
 # def register(request):
 #     if request.method == 'POST':

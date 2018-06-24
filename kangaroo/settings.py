@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'kangaroo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DEBUG = False
+DEBUG = True
 
 try:
     from kangaroo.local_settings import *
@@ -95,9 +95,9 @@ if not DEBUG:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'test',
             'USER': 'postgres',
-            'PASSWORD': 'q319546',
+            'PASSWORD': 'qwerty123',
             'HOST': 'localhost',
-            'PORT': '5432',
+            'PORT': '5433',
         }
     }
 

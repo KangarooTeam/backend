@@ -1,4 +1,5 @@
 myvenv
 venv
 page/static/media/images
-kangaroo/local_settings
+kangaroo/local_settings.py
+kangaroo/settings.py
