@@ -10,6 +10,7 @@ from django.contrib import messages, auth
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.base import View
 from django import forms
+from django.http import HttpResponseNotFound
 
 def index(request):
     posts = Articles.objects.all()
@@ -126,13 +127,10 @@ def search(request):
 
 
 #Q(нужноеполе_in=[слово1, слово2])
-from django.http import HttpResponseNotFound
-from django.shortcuts import render_to_response
-from page.errors import error404
 
 def handler404(request):
     return HttpResponseNotFound(
-        error404()
+        render(request, "errors/404.html")
     )
 
 def developers(request):
