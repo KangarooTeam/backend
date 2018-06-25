@@ -34,6 +34,11 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'developers' %}">Contacts
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
             </ul>
 
             <form class="form-inline" action="/search/" method="get">
@@ -144,6 +149,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <table>
+                        <td><p>Copyright © Kangaroo </p></td>
+                        <td><div class="col-md-2"><p> 2018</p></div></td>
+                        <td><div class="col-md-2"></div></td>
+                        <td><p><a href="{% url 'developers' %}"> О нас</a></p></td>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </footer>
 
 

@@ -134,3 +134,6 @@ def handler404(request):
     return HttpResponseNotFound(
         error404()
     )
+
+def developers(request):
+    return render(request, 'homepage/developers.html')
