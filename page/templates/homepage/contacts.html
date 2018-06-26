@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+</head>
+<body>
+{% extends "homepage/wrapper.html" %}
+{% block content %}
+    <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
+                <span class="breadcrumb-item active">Контакты</span>
+            </nav></div></div>
+        </div>
+{% endblock %}
+</body>
+</html>

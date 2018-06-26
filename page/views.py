@@ -136,6 +136,6 @@ def handler404(request):
 def developers(request):
     return render(request, 'homepage/developers.html')
 
-def kangaroo(request):
-    return render(request, 'homepage/Kangaroo.doc')
+def contacts(request):
+    return render(request, 'homepage/contacts.html')
 
