@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>О разработчиках проекта</title>
 </head>
+<style>
+    .button_left {
+        margin-left: 80%;
+    }
+</style>
 <body>
 {% extends "homepage/wrapper.html" %}
 {% block content %}
@@ -12,29 +17,88 @@
                         <div class="col-md-12">
             <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
-                <span class="breadcrumb-item active">О разработчиках проекта</span>
+                <span class="breadcrumb-item active">О проекте</span>
             </nav></div></div>
         </div>
 
     <div class="container"><div class="row">
 <div class="col-md-12">
-<table>
+
+     <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4"> <font face="Comic Sans MS">Kangaroo</font></h1>
+                        <p>
+                        Проект, возникший в ходе обьеденения перспективных молодых людей,
+с целью научиться программировать. Ведущие специалисты проекта (Роман и Макс)
+       разработали сайт на котором вы находитесь…</p>
+                        <hr class="my-4">
+    <br> Сегодня Kangaroo это не просто информативный сайт:
+     <br>  -У вас есть стартап но нет программистов, мы будем рады обсудить ваш проект,
+    и реализовать его.
+    <br>   -Вам нужно написать бэк на сайт или же фронт, это возможно!
+    <br>   -Нужен бот соц. сети или мессенджера? Для нас это не проблема!
+                        <hr class="my-4">
+                        <div class="button_left">
+                            <a class="btn btn-success btn-lg" href="#" role="button">Связаться</a>
+                        </div>
+
+                    </div>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+
+     <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4"> <font face="Comic Sans MS">Основатели проекта</font></h1>
+
+                        <p class="lead">
+        <table>
 <tr>
 <td width="15%">
 <ul>
     <h6>Роман Татаринов</h6>
 </ul>
 </td>
-    <td width="30%"><p>контент</p></td>
-
+    <td width="30%"><p>Full-stack разработчик, основной язык программирования Python. И просто генеральный директор проекта :)</p></td>
+<td width="10%"></td>
 <td width="15%">
 <ul>
     <h6>Макс Фандо</h6>
 </ul>
 </td>
-<td width="30%"><p>контент</p></td>
+<td width="30%"><p>Full-stack разработчик, основные языки прогроммирования: JavaScript, Python. Вице-президент проекта :)</p></td>
 </tr>
 </table>
+                        </p>
+                    </div>
+
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4"> <font face="Comic Sans MS">Поддержите проект</font></h1>
+
+                        <p>
+                        Наши реквизиты:
+        <br> - #123456
+                        </p>
+                    </div>
+
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+
 </div></div></div>
 {% endblock %}
 
