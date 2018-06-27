@@ -111,55 +111,88 @@
     </main>
     {% endblock %}
 
-    <footer>
-        <hr class="my-4">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="{% url 'index' %}">
-                        <h1>
-                            <font face="Comic Sans MS">Kangaroo</font>
-                        </h1>
-                    </a>
-                </div>
+<footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+        <div class="container text-center text-md-left">
+            
+          <div class="row justify-content-around">
+            <div class="col-md-4 ">
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Kangaroo</h5>
+              <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
+            <hr class="clearfix w-100 d-md-none">
+            <div class="col-md-2 ">
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ссылки</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                    <a href="{% url 'developers' %}">О нас </a>
+                </li>
+                <li>
+                        <a href="{% url 'contacts' %}">Контакты </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-2 ">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Связь с нами</h5>
+            
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="https://vk.com/kangarooteampy">Вконтакте</a>
+                      </li>
+                      <li>
+                        <a href="https://t.me/joinchat/AAAAAEdPJa-dlGMb-hOFig">Телеграм</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <table>
-                        <td>
-                            <p>Copyright © Kangaroo </p>
-                        </td>
-                        <td>
-                            <div class="col-md-2">
-                                <p> 2018</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-md-2"></div>
-                        </td>
-                        <td>
-                            <p>
-                                <a href="{% url 'developers' %}"> О нас</a>
-                            </p>
-                        </td>
-                        <td>
-                            <div class="col-md-2"></div>
-                        </td>
-                        <td>
-                            <div class="col-md-6">
-                                <a href="https://vk.com/kangarooteampy">Вконтакте</a>
-                                <a href="https://t.me/joinchat/AAAAAEdPJa-dlGMb-hOFig">Telegram</a>
-                            </div>
-                        </td>
-                    </table>
-                </div>
-            </div>
+        <hr>
+      
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1">Регистрация</h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="btn btn-danger btn-rounded">Пока что не доступно</a>
+          </li>
+        </ul>
+      
+        <hr>
+      
+        <!-- Social buttons -->
+        <!-- <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fa fa-facebook"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fa fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fa fa-google-plus"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fa fa-linkedin"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1">
+              <i class="fa fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul> -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href=""> Kangaroo</a>
         </div>
-
-    </footer>
+      </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
