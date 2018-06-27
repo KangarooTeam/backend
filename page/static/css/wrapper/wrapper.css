@@ -18,12 +18,6 @@ body a {
   color: lightslategray;
 }
 
-footer {
-  flex: 0 0 auto;
-  padding: 0 25px; }
-  footer a {
-    text-decoration: none; }
-
 /* p {
   text-align: justify; }
 
