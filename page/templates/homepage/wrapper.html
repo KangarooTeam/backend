@@ -6,53 +6,32 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
 </head>
-<style>
-    .date {
-  margin-left: 65%;
-}
-    .button_read {
-        margin-left: 75%;
-    }
-</style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="navbar-brand">
-            <a class="navbar-brand">
-                <font face="Comic Sans MS">Kangaroo</font>
-            </a>
-        </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+                  <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'developers' %}">Information
-                        <span class="sr-only">(current)</span>
-                    </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'developers' %}">Information</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'contacts' %}">Contacts
-                        <span class="sr-only">(current)</span>
-                    </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
                 </li>
-            </ul>
-
-            <form class="form-inline" action="/search/" method="get">
-                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
+              </ul>
+              <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Ведите запрос" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
-            </form>
-
-        </div>
-    </nav>
+              </form>
+            </div>
+          </nav>
+          
 
 
     <main>

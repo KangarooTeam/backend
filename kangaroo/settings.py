@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'kangaroo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DEBUG = True
+DEBUG = False
 
 try:
     from kangaroo.local_settings import *
