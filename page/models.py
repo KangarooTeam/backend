@@ -6,6 +6,7 @@ class Articles(models.Model):
     title = models.CharField(max_length=120)
     body = models.TextField()
     date = models.DateTimeField()
+    author = models.CharField(max_length=100, verbose_name="Автор", null=True, blank=True)
     image = models.ImageField(
         blank=True, upload_to='images/%Y/%m/%d/',
         help_text='150x150px',
