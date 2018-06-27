@@ -6,47 +6,51 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    <a class="nav-link" href="{% url 'index' %}">Главная</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'developers' %}">Information</a>
+                    <a class="nav-link" href="{% url 'developers' %}">О нас</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
+                    <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
                 </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/search" method="get">
                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="Ведите запрос" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
-              </form>
-            </div>
-          </nav>
-          
+            </form>
+        </div>
+    </nav>
 
-
+    {% block content %}
     <main>
-        {% block content %}
         <div class=container>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Home</li>
-                </ol>
-            </nav>
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
                     <div class="jumbotron">
                         <h1 class="display-4">Последняя новость</h1>
                         <p>{{ last_post.date }}</p>
@@ -66,30 +70,16 @@
 
         {% for post in posts %}
         <div class=container>
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="col-md-10">
                     <div class="post">
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="title_block">
-                                    <h4>{{ post.title | truncatechars:55 }}</h4>
-                                </div>
-                            </div>
-                        </div>
+                            <h4>{{ post.title | truncatechars:55 }}</h4><br>
                         <div class="img_block">
                             <h6>{{ post.body | truncatechars:100 }}</h6>
                         </div>
-
-                        <div class="date">
-                            <p>{{ post.date }}</p>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="button_read">
-                                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
-                                </div>
-                            </div>
+                        <p>{{ post.date }}</p>
+                        <div class="button_read">
+                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +92,7 @@
         <br>
 
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
@@ -118,9 +108,8 @@
                 </div>
             </div>
         </div>
-
-        {% endblock %}
     </main>
+    {% endblock %}
 
     <footer>
         <hr class="my-4">
@@ -128,7 +117,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="{% url 'index' %}">
-                        <h1><font face="Comic Sans MS">Kangaroo</font></h1>
+                        <h1>
+                            <font face="Comic Sans MS">Kangaroo</font>
+                        </h1>
                     </a>
                 </div>
             </div>
@@ -138,15 +129,30 @@
             <div class="row">
                 <div class="col-md-12">
                     <table>
-                        <td><p>Copyright © Kangaroo </p></td>
-                        <td><div class="col-md-2"><p> 2018</p></div></td>
-                        <td><div class="col-md-2"></div></td>
-                        <td><p><a href="{% url 'developers' %}"> О нас</a></p></td>
-                        <td><div class="col-md-2"></div></td>
-                        <td><div class="col-md-6">
-                            <a href="https://vk.com/kangarooteampy">Вконтакте</a>
-                            <a href="https://t.me/joinchat/AAAAAEdPJa-dlGMb-hOFig">Telegram</a>
-                        </div>
+                        <td>
+                            <p>Copyright © Kangaroo </p>
+                        </td>
+                        <td>
+                            <div class="col-md-2">
+                                <p> 2018</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-md-2"></div>
+                        </td>
+                        <td>
+                            <p>
+                                <a href="{% url 'developers' %}"> О нас</a>
+                            </p>
+                        </td>
+                        <td>
+                            <div class="col-md-2"></div>
+                        </td>
+                        <td>
+                            <div class="col-md-6">
+                                <a href="https://vk.com/kangarooteampy">Вконтакте</a>
+                                <a href="https://t.me/joinchat/AAAAAEdPJa-dlGMb-hOFig">Telegram</a>
+                            </div>
                         </td>
                     </table>
                 </div>

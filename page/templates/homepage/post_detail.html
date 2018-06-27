@@ -1,61 +1,52 @@
 {% extends 'homepage/wrapper.html' %} {% block head %}
-
-<head>
-    <meta charset="UTF-8">
     <title>{{ post.title }}</title>
-    {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/post_detail/post_detail.css' %}">
-</head>
-{% endblock %}
-<body>
-    <main>
-        {% block content %}
-        <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-            <nav class="breadcrumb">
-                <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
-                <span class="breadcrumb-item active">{{ post.title }}</span>
-            </nav></div></div>
+{% endblock %} 
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
+                    <span class="breadcrumb-item active">{{ post.title }}</span>
+                </nav>
+            </div>
         </div>
+    </div>
 
-        <div class="post">
+    <div class="post">
+        <div class="container">
+            <h1>{{ post.title }}</h1>
+            {% if post.image.url %}
             <div class="container">
-                <h1>{{ post.title }}</h1>
-                {% if post.image.url %}
-                <div class="container">
-                    <div class="row">
-                        <div class="imgpost">
-                            <img height="275px" width="700px" src="{{ MEDIA_URL }}{{ post.image.url }}">
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p></p>
-                            <p>{{ post.body|linebreaksbr }}</p>
-                            <div class="post_detail_menu"></div>
-                        </div>
-
-                        {% if post.date %}
-                        <div class="container">
-                            <div class="row">
-                                <div class="date">
-                                    {{ post.date }}
-                                </div>
-                            </div>
-                        </div>
-                        {% endif %}
+                <div class="row">
+                    <div class="imgpost">
+                        <img height="275px" width="700px" src="{{ MEDIA_URL }}{{ post.image.url }}">
                     </div>
                 </div>
             </div>
-        </div>
-        {% endblock %}
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes.min.js"></script>
-</body>
+            {% endif %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p></p>
+                        <p>{{ post.body|linebreaksbr }}</p>
+                        <div class="post_detail_menu"></div>
+                    </div>
 
-</html>
+                    {% if post.date %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="date">
+                                {{ post.date }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

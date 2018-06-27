@@ -29,21 +29,14 @@ footer {
 
 .post {
   margin-top: 20px; } */
-/* 
-.date {
-  margin-left: 50%;
-}
-.date {
-  margin-left: 65%;
-}
-.button_read {
-    margin-left: 75%;
-} */
-/* .search {
-  margin-left: 30%;
-} */
 
-/* .imgpost {
+
+.search {
   margin-left: 30%;
 }
-# sourceMappingURL=wrapper.css.map */
+ .imgpost {
+  margin-left: 30%;
+}
+.navbar {
+  margin: 5px 0;
+}
