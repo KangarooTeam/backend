@@ -1,104 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>О разработчиках проекта</title>
 </head>
-<style>
-    .button_left {
-        margin-left: 80%;
-    }
-</style>
+
 <body>
-{% extends "homepage/wrapper.html" %}
-{% block content %}
-    <div class="container">
+    {% extends "homepage/wrapper.html" %} {% block content %}
+    <main>
+        <div class="container-fluid text-center developers_section_1">
+            <div class="row">
+                <div class="col-md-5 p-lg-5 mx-auto m-5">
+                    <h1 class="display-4 font-weight-normal">Kangaroo</h1>
+                    <p class="lead font-weight-normal">Проект, возникший в ходе обьеденения перспективных молодых людей, с целью научиться программировать.
+                        Ведущие специалисты проекта (Роман и Макс) разработали сайт на котором вы находитесь…</p>
+                    <a class="btn btn-outline-secondary" href="{% url 'contacts' %}" role="button">Связаться</a>
+                </div>
+
+                <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 developers_section_2">
+                    <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                        <div class="my-3 py-3">
+                            <h2 class="display-5">Роман Татаринов</h2>
+                            <p class="lead">Full-stack разработчик, основной язык программирования Python. И просто генеральный директор
+                                проекта :)</p>
+                        </div>
+                        <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+                    </div>
+
+                    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                        <div class="my-3 py-3">
+                            <h2 class="display-5">Макс Фандо</h2>
+                            <p class="lead">Full-stack разработчик, основные языки прогроммирования: JavaScript, Python. Вице-президент проекта
+                                :)</p>
+                        </div>
+                        <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+                    </div>
+                </div>
+
+                <!-- <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-            <nav class="breadcrumb">
-                <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
-                <span class="breadcrumb-item active">О проекте</span>
-            </nav></div></div>
-        </div>
+                            <div class="jumbotron">
+                                <h1 class="display-4">
+                                    <font face="Comic Sans MS">Поддержите проект</font>
+                                </h1>
 
-    <div class="container"><div class="row">
-<div class="col-md-12">
-
-     <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="jumbotron">
-                        <h1 class="display-4"> <font face="Comic Sans MS">Kangaroo</font></h1>
-                        <p>
-                        Проект, возникший в ходе обьеденения перспективных молодых людей,
-с целью научиться программировать. Ведущие специалисты проекта (Роман и Макс)
-       разработали сайт на котором вы находитесь…</p>
-                        <hr class="my-4">
-    <br> Сегодня Kangaroo это не просто информативный сайт:
-     <br>  -У вас есть стартап но нет программистов, мы будем рады обсудить ваш проект,
-    и реализовать его.
-    <br>   -Вам нужно написать бэк на сайт или же фронт, это возможно!
-    <br>   -Нужен бот соц. сети или мессенджера? Для нас это не проблема!
-                        <hr class="my-4">
-                        <div class="button_left">
-                            <a class="btn btn-success btn-lg" href="{% url 'contacts' %}" role="button">Связаться</a>
+                                <p>
+                                    Наши реквизиты:
+                                    <br> - #123456
+                                </p>
+                            </div>
                         </div>
-
                     </div>
-                    <hr class="my-4">
-                </div>
+                </div> -->
+
             </div>
         </div>
-
-     <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="jumbotron">
-                        <h1 class="display-4"> <font face="Comic Sans MS">Основатели проекта</font></h1>
-
-                        <p class="lead">
-        <table>
-<tr>
-<td width="15%">
-<ul>
-    <h6>Роман Татаринов</h6>
-</ul>
-</td>
-    <td width="30%"><p>Full-stack разработчик, основной язык программирования Python. И просто генеральный директор проекта :)</p></td>
-<td width="10%"></td>
-<td width="15%">
-<ul>
-    <h6>Макс Фандо</h6>
-</ul>
-</td>
-<td width="30%"><p>Full-stack разработчик, основные языки прогроммирования: JavaScript, Python. Вице-президент проекта :)</p></td>
-</tr>
-</table>
-                        </p>
-                    </div>
-
-                    <hr class="my-4">
-                </div>
-            </div>
-        </div>
-
-    <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="jumbotron">
-                        <h1 class="display-4"> <font face="Comic Sans MS">Поддержите проект</font></h1>
-
-                        <p>
-                        Наши реквизиты:
-        <br> - #123456
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-</div></div></div>
-{% endblock %}
+    </main>
+    {% endblock %}
 
 </body>
+
 </html>
