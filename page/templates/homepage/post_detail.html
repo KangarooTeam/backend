@@ -1,12 +1,10 @@
 {% extends 'homepage/wrapper.html' %} {% block head %}
-    <title>{{ post.title }}</title>
-{% endblock %} 
-
-{% block content %}
+<title>{{ post.title }}</title>
+{% endblock %} {% block content %}
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
                 <nav class="breadcrumb">
                     <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
                     <span class="breadcrumb-item active">{{ post.title }}</span>
@@ -16,34 +14,25 @@
     </div>
 
     <div class="post">
-        <div class="container">
-            <h1>{{ post.title }}</h1>
-            {% if post.image.url %}
-            <div class="container">
-                <div class="row">
-                    <div class="imgpost">
-                        <img height="275px" width="700px" src="{{ MEDIA_URL }}{{ post.image.url }}">
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p></p>
-                        <p>{{ post.body|linebreaksbr }}</p>
-                        <div class="post_detail_menu"></div>
-                    </div>
 
-                    {% if post.date %}
-                    <div class="container">
-                        <div class="row">
-                            <div class="date">
-                                {{ post.date }}
-                            </div>
-                        </div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    {% if post.image.url %}
+                    <div class="imgpost">
+                        <img src="{{ MEDIA_URL }}{{ post.image.url }}">
                     </div>
                     {% endif %}
+                    <h1 class="display-4">{{ post.title }}</h1>
+                    <div class="byline">
+                        <a href="https://css-tricks.com/handling-errors-with-error-boundary/">#</a>
+                        {% if post.date %}
+                        <span class="date">{{ post.date }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="post_detail_menu">
+                        <p>{{ post.body|linebreaksbr }}</p>
+                    </div>
                 </div>
             </div>
         </div>

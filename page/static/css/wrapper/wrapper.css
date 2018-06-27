@@ -29,8 +29,29 @@ body a {
   margin-left: 30%;
 }
  .imgpost {
-  margin-left: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .navbar {
   margin: 5px 0;
+}
+body a:hover{
+  text-decoration: none;
+}
+.wrapper_post_detail {
+  margin: 20px auto;
+}
+.byline {
+  background: #e9ecef;
+  color: #999;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+.byline .date{
+  margin: 0 5px;
+}
+.post_detail_menu{
+  margin: 20px auto;
 }
