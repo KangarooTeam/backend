@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1548a218-3c7a-4720-8d27-865b0eb0f350" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/D:/python/kangaroo/backend/page/static/media/images/2018/06/27/Screen_Shot_2018-06-27_at_19.38.39.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/kangaroo/local_settings.py" afterPath="$PROJECT_DIR$/kangaroo/local_settings.py" />
-      <change beforePath="$PROJECT_DIR$/page/models.py" afterPath="$PROJECT_DIR$/page/models.py" />
-      <change beforePath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" afterPath="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
+      <change beforePath="$PROJECT_DIR$/page/templates/homepage/search.html" afterPath="$PROJECT_DIR$/page/templates/homepage/search.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state relative-caret-position="244">
+              <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -87,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/post_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="306">
+              <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -165,7 +162,6 @@
         <option value="$PROJECT_DIR$/page/templates/homepage/search_form.html" />
         <option value="$PROJECT_DIR$/page/templates/homepage/search_results.html" />
         <option value="$PROJECT_DIR$/page/static/css/blog.css" />
-        <option value="$PROJECT_DIR$/page/templates/homepage/search.html" />
         <option value="$PROJECT_DIR$/page/templates/404.html" />
         <option value="$PROJECT_DIR$/page/templates/errors/404.htm" />
         <option value="$PROJECT_DIR$/myvenv/Lib/site-packages/django/conf/urls/__init__.py" />
@@ -183,6 +179,7 @@
         <option value="$PROJECT_DIR$/kangaroo/local_settings.py" />
         <option value="$PROJECT_DIR$/page/models.py" />
         <option value="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
+        <option value="$PROJECT_DIR$/page/templates/homepage/search.html" />
       </list>
     </option>
   </component>
@@ -670,14 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/templates/homepage/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -704,8 +693,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/templates/homepage/post_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="306">
+          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/templates/homepage/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
           <folding />
         </state>
       </provider>
