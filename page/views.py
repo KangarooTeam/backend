@@ -127,15 +127,15 @@ def search(request):
 
 
 #Q(нужноеполе_in=[слово1, слово2])
-
 def handler404(request):
     return HttpResponseNotFound(
         render(request, "errors/404.html")
     )
 
-def developers(request):
-    return render(request, 'homepage/developers.html')
+class Information():
+    def developers(request):
+        return render(request, 'homepage/developers.html')
 
-def contacts(request):
-    return render(request, 'homepage/contacts.html')
-
+class Contacts():
+    def contacts(request):
+        return render(request, 'homepage/contacts.html')
