@@ -1,16 +1,16 @@
-from django.shortcuts import render, get_object_or_404, render_to_response
+from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.utils import timezone
 from .models import Articles
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
-from django.shortcuts import redirect
 from django.contrib import messages, auth
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.views.generic.base import View
 from django import forms
-from django.http import HttpResponseNotFound
+from django.db.models import Q
+import re
 
 def index(request):
     posts = Articles.objects.all()
@@ -104,21 +104,18 @@ def register(request):
 #         return render(request, 'accounts/reg_form.html', args)
 
 
-from django.db.models import Q
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
-import re
-
 def search(request):
      q = request.GET['q']
      res = [i for i in q.split()]
+     cash = []
      if q:
          result = []
-         cash = []
          for j in res:
-             result.append(Articles.objects.filter(
-                 Q(title__icontains=j)|
-                 Q(body__icontains=j)))
+             if j not in cash:
+                 cash.append(j)
+                 result.append(Articles.objects.filter(
+                     Q(title__icontains=j)|
+                     Q(body__icontains=j)))
      else:
          result = False
 
@@ -126,7 +123,6 @@ def search(request):
                               {"result": result, 'q': q})
 
 
-#Q(нужноеполе_in=[слово1, слово2])
 def handler404(request):
     return HttpResponseNotFound(
         render(request, "errors/404.html")
