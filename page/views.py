@@ -11,11 +11,15 @@ from django.views.generic.base import View
 from django import forms
 from django.db.models import Q
 import re
+from taggit.models import Tag
 
-def index(request):
+def index(request, tag_slug=None):
     posts = Articles.objects.all()
     posts_r = [r for r in reversed(posts)]
     last_post = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts_r = posts_r.filter(tags__in=[tag])
     if len(posts_r) > 0:
         last_post = posts_r[0]
         paginator = Paginator(posts_r, 3)
@@ -135,3 +139,4 @@ class Information():
 class Contacts():
     def contacts(request):
         return render(request, 'homepage/contacts.html')
+
