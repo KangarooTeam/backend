@@ -4,12 +4,12 @@ ALLOWED_HOSTS = ['*']
 DEBUG = True
 INSTALLED_APPS
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',
-        'USER': 'postgres',
-        'PASSWORD': 'qwerty123',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'test',
+            'USER': 'postgres',
+            'PASSWORD': 'q319546',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}

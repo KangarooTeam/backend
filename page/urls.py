@@ -10,5 +10,6 @@ urlpatterns = [
      url(r'^login/$', views.log_in, name='log_in'),
      url(r'^developers/$', views.Information.developers, name="developers"),
      url(r'^contacts/$', views.Contacts.contacts, name='contacts'),
+     url(r'^tag/(?P<tag_slug>[-\w]+)/$', views.index, name='post_list_by_tag'),url(r'^tag/(?P<tag_slug>[-\w]+)/$', views.index, name='post_list_by_tag'),
 ]
 
