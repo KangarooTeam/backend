@@ -40,6 +40,13 @@
                         {% if post.author %}
                         <strong>Автор статьи: {{ post.author }}</strong>
                         {% endif %}
+                    <p>
+                    {% if post.tags.all %}
+                            {% for tag in post.tags.all %}
+                            Тэги: {{ tag }}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
                     </div>
                 </div>
             </div>

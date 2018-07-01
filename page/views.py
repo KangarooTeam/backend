@@ -18,7 +18,6 @@ def index(request, tag_slug=None):
     posts = Articles.objects.all()
     posts_r = [r for r in reversed(posts)]
     last_post = None
-    list_of_tags = []
 
     if len(posts_r) > 0:
         last_post = posts_r[0]
