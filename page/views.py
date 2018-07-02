@@ -15,13 +15,12 @@ from taggit.models import Tag
 
 
 def index(request, tag_slug=None):
-    posts = Articles.objects.all()
-    posts_r = [r for r in reversed(posts)]
+    posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')
     last_post = None
 
-    if len(posts_r) > 0:
-        last_post = posts_r[0]
-        paginator = Paginator(posts_r, 3)
+    if len(posts) > 0:
+        last_post = posts[0]
+        paginator = Paginator(posts, 3)
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
