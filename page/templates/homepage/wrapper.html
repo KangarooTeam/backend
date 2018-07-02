@@ -1,4 +1,4 @@
-<head xmlns="http://www.w3.org/1999/html">
+<head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <meta charset="UTF-8">
     <title>Kangaroo</title>
     {% load staticfiles %}
@@ -103,16 +103,23 @@
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                        <a href="?page={{ posts.previous_page_number }}"> назад</a>
+                            <button type="button" class="btn btn-light">
+                                <a href="?page={{ posts.previous_page_number }}">назад</a>
+                            </button>
                         {% endif %}
-                        <span class="current">
-                            {{ posts.number }} из {{ posts.paginator.num_pages }}.
-                        </span>
+                        <span class="current"><strong>
+                            <button type="button" class="btn btn-light">
+                            {{ posts.number }} из {{ posts.paginator.num_pages }}
+                            </button>
+                        </strong></span>
                         {% if posts.has_next %}
-                        <a href="?page={{ posts.next_page_number }}">вперед ></a>
+                            <button type="button" class="btn btn-light">
+                                <a href="?page={{ posts.next_page_number }}">вперед</a>
+                            </button>
                         {% endif %}
                     </span>
                 </div>
+
             </div>
         </div>
     </main>
