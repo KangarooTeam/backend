@@ -103,18 +103,18 @@
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                            <button type="button" class="btn btn-light">
-                                <a href="?page={{ posts.previous_page_number }}">назад</a>
+                            <button type="button" class="btn btn-outline-dark">
+                                <a class="btn-outline-dark" href="?page={{ posts.previous_page_number }}">назад</a>
                             </button>
                         {% endif %}
                         <span class="current"><strong>
-                            <button type="button" class="btn btn-light">
+                            <button type="button" class="btn btn-outline-secondary">
                             {{ posts.number }} из {{ posts.paginator.num_pages }}
                             </button>
                         </strong></span>
                         {% if posts.has_next %}
-                            <button type="button" class="btn btn-light">
-                                <a href="?page={{ posts.next_page_number }}">вперед</a>
+                            <button type="button" class="btn btn-outline-dark">
+                                <a class="btn-outline-dark" href="?page={{ posts.next_page_number }}">вперед</a>
                             </button>
                         {% endif %}
                     </span>
