@@ -18,7 +18,7 @@
 
 <div class="container">
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
     {% if result %}
         <h3>Найденные результаты: </h3><p></p>
         {% for res in result %}
@@ -29,19 +29,23 @@
             {% endfor %}
         {% endfor %}
     {% else %}
-        <h3 align="center">Ничего не найдено!</h3>
-        <h4 align="center">Возможно строка поиска была пустой, повторите запрос:</h4>
-        <p></p>
-        <div class="container"><div class="row"><div class="search">
+        <h5 align="center">Ничего не найдено!</h5>
+        <p>Возможно строка поиска была пустой;</p>
+        <p>Возсожно вы допустили синтаксическую ошибку;</p>
+        <p>Убедитесь в правильности запроса</p>
+
+    {% endif %}
+    <div class="col-sm-1"></div>
+        </div><div class ="col-sm-4"><br><h5 align="left">Повторить поисковой запрос:</h5><br>
+        <div class="container"><div class="row">
             <form class="form-inline" action="/search/" method="get">
                 <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
             </form>
-        </div></div></div>
-    {% endif %}
-    </div><div class="col-md-6"><br>
+        </div></div>
+    </div><div class="col-sm-3"><br>
     <i><h1 align="center" class="font-weight-bold text-uppercase mt-3 mb-4">Kangaroo</h1></i>
-    <h3 align="center"><em>узнаешь все!</em> </h3>
+    <p align="right"><em>Информация в полном объеме!</em> </p>
 </div>
 </div>
 
