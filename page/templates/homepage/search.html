@@ -19,7 +19,7 @@
 <div class="container">
 <div class="row">
     <div class="col-sm-4">
-    {% if result %}
+    {% if result and result.count > 0 %}
         <h3>Найденные результаты: </h3><p></p>
         {% for res in result %}
             {% for r in res %}
