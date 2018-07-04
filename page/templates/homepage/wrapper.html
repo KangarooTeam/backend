@@ -1,4 +1,4 @@
-<head xmlns="http://www.w3.org/1999/html">
+<head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <meta charset="UTF-8">
     <title>Kangaroo</title>
     {% load staticfiles %}
@@ -11,9 +11,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="{% url 'index' %}">
-            <img src="../../static/media/images/Logo.png" alt="Kangaroo" width="40px" height="40px" style="border-radius: 2px;">Kangaroo
-        </a>
+        <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,6 +50,7 @@
             </div>
         </div>
 
+        {% if last_post %}
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-10">
@@ -61,8 +60,9 @@
                         <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
                         <hr class="my-4">
                         <p>{{ last_post.body | truncatechars:300}}</p>
-                        <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
+                        <br>
+                        <p align="right" class="lead">
+                            <a class="btn btn-info btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
                         </p>
                     </div>
 
@@ -70,28 +70,27 @@
                 </div>
             </div>
         </div>
-
-
-        {% for post in posts %}
+        {% endif %} {% if posts %} {% for post in posts %}
         <div class="container wrapper_post_detail">
-            <div class="row justify-content-md-center">
-                <div class="col-md-10">
+            <div class="row justify-content-md-left">
+                <div class="col-md-6 offset-1">
                     <div class="post">
+
                         <h4>{{ post.title | truncatechars:55 }}</h4>
                         <br>
                         <div class="img_block">
                             <h6>{{ post.body | truncatechars:300 }}</h6>
                         </div>
                         <p>{{ post.date }}</p>
-                        <div class="button_read">
-                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
+
+                        <div align="right" class="button_read">
+                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-md">Читать…</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-
+        {% endfor %} {% endif %}
         <br>
         <br>
 
@@ -100,16 +99,23 @@
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                        <a href="?page={{ posts.previous_page_number }}"> назад</a>
+                        <a class="btn-outline-secondary" href="?page={{ posts.previous_page_number }}">
+                            <button type="button" class="btn btn-outline-secondary">Назад</button>
+                        </a>
                         {% endif %}
                         <span class="current">
-                            {{ posts.number }} из {{ posts.paginator.num_pages }}.
+                            <button type="button" class="btn btn-outline-secondary">
+                                {{ posts.number }} из {{ posts.paginator.num_pages }}
+                            </button>
                         </span>
                         {% if posts.has_next %}
-                        <a href="?page={{ posts.next_page_number }}">вперед ></a>
+                        <a class="btn-outline-secondary" href="?page={{ posts.next_page_number }}">
+                            <button type="button" class="btn btn-outline-secondary">Дальше</button>
+                        </a>
                         {% endif %}
                     </span>
                 </div>
+
             </div>
         </div>
     </main>

@@ -13,16 +13,14 @@ from django.db.models import Q
 import re
 from taggit.models import Tag
 
+
 def index(request, tag_slug=None):
-    posts = Articles.objects.all()
-    posts_r = [r for r in reversed(posts)]
+    posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')
     last_post = None
-    if tag_slug:
-        tag = get_object_or_404(Tag, slug=tag_slug)
-        posts_r = posts_r.filter(tags__in=[tag])
-    if len(posts_r) > 0:
-        last_post = posts_r[0]
-        paginator = Paginator(posts_r, 3)
+
+    if len(posts) > 0:
+        last_post = posts[0]
+        paginator = Paginator(posts, 3)
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
@@ -32,7 +30,7 @@ def index(request, tag_slug=None):
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             posts = paginator.page(paginator.num_pages)
-    return render(request, 'homepage/wrapper.html', {'posts': posts, "last_post": last_post})
+    return render(request, 'homepage/wrapper.html', locals(), {'posts': posts, "last_post": last_post})
 
 
 def post_detail(request, pk):
