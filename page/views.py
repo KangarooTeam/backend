@@ -20,7 +20,10 @@ def index(request, tag_slug=None):
 
     if len(posts) > 0:
         last_post = posts[0]
-        paginator = Paginator(posts, 3)
+        if len(posts) >= 7:
+            paginator = Paginator(posts, 7)
+        else:
+            paginator = Paginator(posts, len(posts))
         page = request.GET.get('page')
         try:
             posts = paginator.page(page)
