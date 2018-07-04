@@ -76,7 +76,8 @@
         {% for post in posts %}
         <div class="container wrapper_post_detail">
             <div class="row justify-content-md-center">
-                <div class="col-md-10">
+                <div class="col-md-2"></div>
+                <div class="col-md-6">
                     <div class="post">
 
                         <h4>{{ post.title | truncatechars:55 }}</h4>
@@ -86,11 +87,12 @@
                         </div>
                         <p>{{ post.date }}</p>
 
-                        <div class="button_read">
-                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary btn-md">Читать…</a>
+                        <div align="right" class="button_read">
+                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-md">Читать…</a>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4"></div>
             </div>
         </div>
         {% endfor %}
