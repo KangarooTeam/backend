@@ -62,8 +62,9 @@
                         <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
                         <hr class="my-4">
                         <p>{{ last_post.body | truncatechars:300}}</p>
-                        <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
+                        <br>
+                        <p align="right" class="lead">
+                            <a class="btn btn-info btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
                         </p>
                     </div>
 
