@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1548a218-3c7a-4720-8d27-865b0eb0f350" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/page/templates/homepage/developers.html" afterPath="$PROJECT_DIR$/page/templates/homepage/developers.html" />
-      <change beforePath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" afterPath="$PROJECT_DIR$/page/templates/homepage/wrapper.html" />
+      <change beforePath="$PROJECT_DIR$/page/templates/homepage/contacts.html" afterPath="$PROJECT_DIR$/page/templates/homepage/contacts.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,21 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contacts.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/contacts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="178">
+              <caret line="21" column="101" lean-forward="false" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrapper.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="129" column="65" lean-forward="false" selection-start-line="129" selection-start-column="65" selection-end-line="129" selection-end-column="65" />
+            <state relative-caret-position="6">
+              <caret line="167" column="13" lean-forward="false" selection-start-line="167" selection-start-column="13" selection-end-line="169" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -178,7 +177,6 @@
         <option value="$PROJECT_DIR$/page/admin.py" />
         <option value="$PROJECT_DIR$/kangaroo/settings.py" />
         <option value="$PROJECT_DIR$/page/models.py" />
-        <option value="$PROJECT_DIR$/page/templates/homepage/contacts.html" />
         <option value="$PROJECT_DIR$/page/urls.py" />
         <option value="$PROJECT_DIR$/page/views.py" />
         <option value="$PROJECT_DIR$/kangaroo/local_settings.py" />
@@ -186,6 +184,7 @@
         <option value="$PROJECT_DIR$/page/templates/homepage/post_detail.html" />
         <option value="$PROJECT_DIR$/page/templates/homepage/developers.html" />
         <option value="$PROJECT_DIR$/page/templates/homepage/wrapper.html" />
+        <option value="$PROJECT_DIR$/page/templates/homepage/contacts.html" />
       </list>
     </option>
   </component>
@@ -648,14 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/templates/homepage/contacts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -719,8 +710,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/templates/homepage/wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="129" column="65" lean-forward="false" selection-start-line="129" selection-start-column="65" selection-end-line="129" selection-end-column="65" />
+        <state relative-caret-position="6">
+          <caret line="167" column="13" lean-forward="false" selection-start-line="167" selection-start-column="13" selection-end-line="169" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/templates/homepage/contacts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="21" column="101" lean-forward="false" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="101" />
           <folding />
         </state>
       </provider>
