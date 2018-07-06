@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-likes/dist/social-likes_flat.css">
     <link rel="stylesheet" href="{% static 'css/wrapper/wrapper.css' %}">
 </head>
-
+<style>
+</style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
@@ -40,10 +41,10 @@
     <main>
         <div class=container>
             <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb" >
+                        <ol class="breadcrumb" style="background: #343a40!important">
+                            <li class="breadcrumb-item active" aria-current="page" style="color: white">Home</li>
                         </ol>
                     </nav>
                 </div>
@@ -53,44 +54,54 @@
         {% if last_post %}
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                    <div class="jumbotron">
-                        <h1 class="display-4">Последняя новость</h1>
-                        <p>{{ last_post.date }}</p>
-                        <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
-                        <hr class="my-4">
-                        <p>{{ last_post.body | truncatechars:300}}</p>
-                        <br>
-                        <p align="right" class="lead">
-                            <a class="btn btn-info btn-lg" href="{% url 'post_detail' pk=last_post.pk %}" role="button">Узнать подробнее</a>
-                        </p>
+                
+                    <div class="col-md-12">
+                            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+                                    <div class="col-md-8">
+                                        <h1 class="display-4 font-italic">Последняя новость</h1>
+                                    <p class="">{{ last_post.date }}</p>
+                                    <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
+                                    <hr class="lead my-3">
+                                    <p>{{ last_post.body | truncatechars:300}}</p>
+                                    <p class="lead mb-0">
+                                            
+                                        <a class="text-white font-weight-bold" href="{% url 'post_detail' pk=last_post.pk %}">Подробнее...</a>
+                                    </p>
+                                    </div>
+                                </div>
+            
+                                <hr class="my-4">
                     </div>
-
-                    <hr class="my-4">
-                </div>
+                
             </div>
         </div>
-        {% endif %} {% if posts %} {% for post in posts %}
+        {% endif %}
+
         <div class="container wrapper_post_detail">
-            <div class="row justify-content-md-left">
-                <div class="col-md-6 offset-1">
-                    <div class="post">
-
-                        <h4>{{ post.title | truncatechars:55 }}</h4>
-                        <br>
-                        <div class="img_block">
-                            <h6>{{ post.body | truncatechars:300 }}</h6>
+            <div class="row ">
+                {% if posts %} {% for post in posts %}
+                <div class="col-md-6 post_news">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <span class="d-inline-block mb-2 text-primary">{{ post.tags.all }}</span>
+                            <h3 class="mb-0"> <a class="text-dark" href="{% url 'post_detail' pk=post.pk %}">{{ post.title | truncatechars:55 }}</a></h3> 
+                            <div class="mb-1 text-muted">{{ post.date }}</div>
+                            <p class="card-text mb-auto">{{ post.body | truncatechars:100 }}</p>
+                            <a href="{% url 'post_detail' pk=post.pk %}">Читать...</a>
                         </div>
-                        <p>{{ post.date }}</p>
-
-                        <div align="right" class="button_read">
-                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-md">Читать…</a>
-                        </div>
+                        <img class="card-img-right flex-auto d-none d-lg-block" data-holder-rendered="true" src="" alt="Thumbnail [200x250]" style="height: 250px; width: 200px; background: #212529" data-src="holder.js/200x250?theme=thumb">
+                    </div>
+                    
+                </div>
+                {% endfor %} {% endif %}
+                <div class="col-md-2">
+                    <div class="banner">
+                        <h1>Здесь могла бы быть ваша реклама</h1>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %} {% endif %}
+
         <br>
         <br>
 
@@ -127,7 +138,10 @@
             <div class="row justify-content-around">
                 <div class="col-md-4 ">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Kangaroo</h5>
-                    <p><em><big>Информация в полном объеме!</big></em>
+                    <p>
+                        <em>
+                            <big>Информация в полном объеме!</big>
+                        </em>
                     </p>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
