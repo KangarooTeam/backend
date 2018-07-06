@@ -20,18 +20,24 @@
 <div class="row">
     <div class="col-sm-4">
     {% if result %}
-        <h3>Найденные результаты: </h3><p></p>
         {% for res in result %}
-            {% for r in res %}
-                <h4><a href="{{ r.get_absolute_url }}">{{ r.title }}</a></h4>
+            {% if res %}
+                <h3>Найденные результаты: </h3><p></p>
+                {% for r in res %}
+                    <h4><a href="{{ r.get_absolute_url }}">{{ r.title }}</a></h4>
                 <h6>{{ r.body | truncatewords:20 }}</h6>
                 <p></p>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+        <h5 align="center">Ничего не найдено!</h5>
+        <p>Возсожно вы допустили грамматическую ошибку;</p>
+        <p>Убедитесь в правильности запроса</p>
+            {% endif %}
         {% endfor %}
     {% else %}
-        <h5 align="center">Ничего не найдено!</h5>
-        <p>Возможно строка поиска была пустой;</p>
-        <p>Возсожно вы допустили синтаксическую ошибку;</p>
+        <h5 align="center">Поиск на информационном портале</h5>
+        <h3 align="center">Kangaroo</h3>
+        <p>Возможно строка поиска была пустой</p>
         <p>Убедитесь в правильности запроса</p>
 
     {% endif %}
