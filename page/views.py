@@ -141,3 +141,6 @@ class Contacts():
     def contacts(request):
         return render(request, 'homepage/contacts.html')
 
+def search_list(request):
+    return render(request, 'homepage/search.html')
+
