@@ -20,8 +20,8 @@ def index(request, tag_slug=None):
 
     if len(posts) > 0:
         last_post = posts[0]
-        if len(posts) >= 7:
-            paginator = Paginator(posts, 7)
+        if len(posts) >= 5:
+            paginator = Paginator(posts, 5)
         else:
             paginator = Paginator(posts, len(posts))
         page = request.GET.get('page')
@@ -143,4 +143,24 @@ class Contacts():
 
 def search_list(request):
     return render(request, 'homepage/search.html')
+
+def category(request, tag_slug=None):
+    posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')
+
+    if len(posts) > 0:
+        if len(posts) >= 5:
+            paginator = Paginator(posts, 5)
+        else:
+            paginator = Paginator(posts, len(posts))
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            posts = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            posts = paginator.page(paginator.num_pages)
+    return render(request, 'homepage/category.html', locals(), {'posts': posts})
+
 
