@@ -30,3 +30,30 @@ class Articles(models.Model):
     def get_absolute_url(self):
         return "/post/%i/" % self.id
 
+
+class TopArticles(models.Model):
+    title_top = models.CharField(max_length=120)
+    body_top = models.TextField()
+    date_top = models.DateTimeField()
+    author_top = models.CharField(max_length=100, verbose_name="Автор", null=True, blank=True)
+    tags_top = TaggableManager()
+    image_top = models.ImageField(
+        blank=True, upload_to='images/%Y/%m/%d/',
+        help_text='150x150px',
+        verbose_name='Ссылка картинки'
+    )
+
+    def __str__(self):
+        return self.title_top
+
+    def image_img_top(self):
+        if self.image_top:
+            return u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image_top.url)
+        else:
+            return '(Нет изображения)'
+
+    image_img_top.short_description = 'Картинка'
+    image_img_top.allow_tags = True
+
+    def get_absolute_url_top(self):
+        return "/post_top/%i/" % self.id
