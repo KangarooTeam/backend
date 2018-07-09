@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Articles, TopArticles
+from .models import Articles, Top
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -9,4 +9,4 @@ class ImageAdmin(admin.ModelAdmin):
 
 admin.site.register(Articles, ImageAdmin)
 
-admin.site.register(TopArticles)
+admin.site.register(Top)

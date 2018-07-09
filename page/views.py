@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.utils import timezone
-from .models import Articles, TopArticles
+from .models import Articles, Top
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -36,8 +36,8 @@ def index(request, tag_slug=None):
     return render(request, 'homepage/wrapper.html', locals(), {'posts': posts, "last_post": last_post})
 
 def index_top(request, tag_slug=None):
-    posts_top = TopArticles.objects.all()
-    return render(request, 'homepage/top_wrapper.html', locals(), {'posts_top': posts_top})
+    tops = Top.objects.all()
+    return render(request, 'homepage/top_wrapper.html', locals(), {'tops': tops})
 """
     if len(posts_top) > 0:
         if len(posts_top) >= 4:
@@ -58,7 +58,7 @@ def index_top(request, tag_slug=None):
 
 
 def post_detail_top(request, pk):
-    post_top = get_object_or_404(TopArticles, pk=pk)
+    post_top = get_object_or_404(Top, pk=pk)
     return render(request, 'homepage/post_detail_top.html', {'post_top': post_top})
 
 def post_detail(request, pk):

@@ -31,9 +31,9 @@ class Articles(models.Model):
         return "/post/%i/" % self.id
 
 
-class TopArticles(models.Model):
-    title_top = models.CharField(max_length=100)
-    body_top = models.TextField()
+class Top(models.Model):
+    title = models.CharField(max_length=100)
+    body = models.TextField()
 
     def __str__(self):
-        return self.title_top
+        return self.title

@@ -7,18 +7,7 @@
 <body>
 {% extends "homepage/wrapper.html" %}
 {% block content %}
-    {% for post in posts %}
-        {% for tags in post.tags.all %}
-            {{ tags }}
-        {% endfor %}
-    {% endfor %}
-    <form class="form-inline" action="/category/" method="get">
-                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
-            </form>
-    {% for res in result %}
-        {{ res }}
-    {% endfor %}
+    {% include 'homepage/top_wrapper.html' %}
 {% endblock %}
 </body>
 </html>
