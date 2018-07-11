@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.utils import timezone
-from .models import Articles, Top
+from .models import Articles, Genre
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -169,23 +169,8 @@ class Contacts():
 def search_list(request):
     return render(request, 'homepage/search.html')
 
-def category(request, tag_slug=None):
-    posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')
 
-    if len(posts) > 0:
-        if len(posts) >= 5:
-            paginator = Paginator(posts, 5)
-        else:
-            paginator = Paginator(posts, len(posts))
-        page = request.GET.get('page')
-        try:
-            posts = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            posts = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            posts = paginator.page(paginator.num_pages)
-    return render(request, 'homepage/category.html', locals(), {'posts': posts})
+def show_genres(request):
+    return render(request, "homepage/category.html", {'genres': Genre.objects.all()})
 
 

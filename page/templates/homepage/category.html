@@ -7,7 +7,19 @@
 <body>
 {% extends "homepage/wrapper.html" %}
 {% block content %}
-    {% include 'homepage/top_wrapper.html' %}
+    {% load mptt_tags %}
+<ul>
+    {% recursetree genres %}
+        <li>
+            {{ node.name }}
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>
 {% endblock %}
 </body>
 </html>
