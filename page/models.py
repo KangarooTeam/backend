@@ -2,6 +2,24 @@ from django.db import models
 from django.utils import timezone
 from django import forms
 from taggit.managers import TaggableManager
+from mptt.models import MPTTModel, TreeForeignKey
+import mptt
+
+class Genre(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children', verbose_name="Родительский класс")
+    class Meta():
+        ordering = ('tree_id', "level")
+        verbose_name_plural = "Категории"
+        verbose_name = "Категории"
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    def __str__(self):
+        return self.name
+
+mptt.register(Genre, order_insertion_by=['name'])
 
 class Articles(models.Model):
     title = models.CharField(max_length=120)
@@ -9,6 +27,7 @@ class Articles(models.Model):
     date = models.DateTimeField()
     author = models.CharField(max_length=100, verbose_name="Автор", null=True, blank=True)
     tags = TaggableManager()
+    category = TreeForeignKey(Genre, blank=True, null=True, related_name="cat")
     image = models.ImageField(
         blank=True, upload_to='images/%Y/%m/%d/',
         help_text='150x150px',

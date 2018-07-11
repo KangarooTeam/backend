@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'page',
     'taggit',
     'rest_framework',
+    'mptt',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +103,7 @@ if not DEBUG:
         }
     }
 
+MPTT_ADMIN_LEVEL_INDENT = 40
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
