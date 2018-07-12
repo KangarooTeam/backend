@@ -119,10 +119,12 @@
                     {% for post in posts %}
                     <div class="blog-post">
                         <h2 class="blog-post-title">{{ post.title }}</h2>
-                        <p class="blog-post-meta">{{ post.date }} {{ post.author }}</p>
+                        <p class="blog-post-meta">{{ post.date }}
+                            {% if post.author %}| <i>{{ post.author }}</i></>{% endif %}
                         <p>{{ post.body | truncatechars:300}}</p>
-                        <a href="{% url 'post_detail' pk=post.pk %}">Читать...</a>
-                    </div>
+                    <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-rounded"> Это круто!</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-rounded">Читать...</a>
+                        </div></div>
                     {% endfor %}
                     {% endif %}
                 </div>
