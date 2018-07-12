@@ -35,104 +35,9 @@ def index(request, tag_slug=None):
             posts = paginator.page(paginator.num_pages)
     return render(request, 'homepage/wrapper.html', locals(), {'posts': posts, "last_post": last_post})
 
-def index_top(request, tag_slug=None):
-    tops = Top.objects.all()
-    return render(request, 'homepage/top_wrapper.html', locals(), {'tops': tops})
-"""
-    if len(posts_top) > 0:
-        if len(posts_top) >= 4:
-            paginator = Paginator(posts_top, 4)
-        else:
-            paginator = Paginator(posts_top, len(posts_top))
-        page = request.GET.get('page')
-        try:
-            posts_top = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            posts_top = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            posts_top = paginator.page(paginator.num_pages)
-
-    return render(request, 'homepage/top_wrapper.html', locals(), {'posts_top': posts_top})"""
-
-
-def post_detail_top(request, pk):
-    post_top = get_object_or_404(Top, pk=pk)
-    return render(request, 'homepage/post_detail_top.html', {'post_top': post_top})
-
 def post_detail(request, pk):
     post = get_object_or_404(Articles, pk=pk)
     return render(request, 'homepage/post_detail.html', {'post': post})
-
-class LoginForm(forms.Form):
-    username = forms.CharField(label=u'Имя пользователя')
-    password = forms.CharField(label=u'Пароль', widget=forms.PasswordInput())
-
-    def clean(self):
-        cleaned_data = super(LoginForm, self).clean()
-        if not self.errors:
-            user = authenticate(username=cleaned_data['username'], password=cleaned_data['password'])
-            if user is None:
-                raise forms.ValidationError(u'Имя пользователя и пароль не подходят')
-            self.user = user
-        return cleaned_data
-
-    def get_user(self):
-        return self.user or None
-
-def log_in(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            if form.get_user():
-                login(request, form.get_user())
-                return HttpResponseRedirect('/')
-    else:
-        form = LoginForm()
-    return render(request, 'accounts/log_form.html', {'form': form})
-
-class RegistrationForm(forms.Form):
-    username = forms.CharField(label='Имя пользователя')
-    password1 = forms.CharField(label=u'Пароль', widget=forms.PasswordInput)
-    password2 = forms.CharField(label=u'Повторите пароль', widget=forms.PasswordInput)
-
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        # TODO: проверить, что username не занят
-        return self.cleaned_data
-
-    def clean(self):
-        password1 = self.cleaned_data.get('password1')
-        password2 = self.cleaned_data.get('password2')
-        # TODO: проверить, что пароли совпадают
-        return self.cleaned_data
-
-def register(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            # TODO:
-            # 1. создать пользователя,
-            # 2. установить ему пароль
-            # 3. Зайти под его именем на сайт
-            return HttpResponseRedirect('/')
-
-    else:
-        form = RegistrationForm()
-    return render(request, 'accounts/reg_form.html', {'form': form})
-
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('/account')
-#     else:
-#         form = UserCreationForm()
-#         args = {'form': form}
-#         return render(request, 'accounts/reg_form.html', args)
-
 
 def search(request):
      q = request.GET['q']
@@ -172,5 +77,16 @@ def search_list(request):
 
 def show_genres(request):
     return render(request, "homepage/category.html", {'genres': Genre.objects.all()})
+
+def target_category(request, category_id=1):
+    args = {}
+    args["category"] = Genre.objects.get(category_id=id)
+    #args["articles"] = Articles.objects.filter(category_id=category_id)
+
+    render_to_response("homepage/target_category.html")
+
+
+
+
 
 
