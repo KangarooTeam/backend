@@ -81,9 +81,9 @@ def show_genres(request):
 def target_category(request, category_id=1):
     args = {}
     args["category"] = Genre.objects.get(category_id=id)
-    #args["articles"] = Articles.objects.filter(category_id=category_id)
+    args["articles"] = Articles.objects.filter(category_id=category_id)
 
-    render_to_response("homepage/target_category.html")
+    render_to_response("homepage/target_category.html", args)
 
 
 
