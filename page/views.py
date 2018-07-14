@@ -78,15 +78,9 @@ def search_list(request):
 def show_genres(request):
     return render(request, "homepage/category.html", {'genres': Genre.objects.all()})
 
-def target_category(request, category_id=1):
-    args = {}
-    args["category"] = Genre.objects.get(category_id=id)
-    args["articles"] = Articles.objects.filter(category_id=category_id)
-
-    render_to_response("homepage/target_category.html", args)
-
-
-
+def move_category(request, id):
+    target = get_object_or_404(Genre, pk=id)
+    return render(request, 'homepage/category.html', {'target': target})
 
 
 

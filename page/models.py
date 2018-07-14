@@ -19,6 +19,9 @@ class Genre(MPTTModel):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return "/category_id/{}/".format(self.id)
+
 mptt.register(Genre, order_insertion_by=['name'])
 
 class Articles(models.Model):

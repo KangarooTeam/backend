@@ -8,7 +8,7 @@ urlpatterns = [
      url(r'^search/$', views.search, name='search'),
      url(r'^search_list/$', views.search_list, name="search_list"),
      url(r'^category/$', views.show_genres, name="category"),
-     url(r'^target_category/(?P<category_id>\d+)$', views.target_category, name="target_category"),
+     url(r'^target_category/(?P<pk>[0-9]+)/$', views.move_category, name="target_category"),
      url(r'^developers/$', views.Information.developers, name="developers"),
      url(r'^contacts/$', views.Contacts.contacts, name='contacts'),
      ]

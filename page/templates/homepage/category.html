@@ -10,7 +10,8 @@
     {% load mptt_tags %}
 <ul>
     {% recursetree genres %}
-        <li>
+        <li>{{ category_tree }}
+        <!-- /* не работает url "target_category" pk=target.pk  */ -->
             <a href="#">{{ node.name }}</a>
             {% if not node.is_leaf_node %}
                 <ul class="children">
