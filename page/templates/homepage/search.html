@@ -36,15 +36,8 @@
             <div class="row justify-content-md-center">
                 <div class="pagination">
                     <span class="step-links">
-                        {% if result.has_previous %}
-                        <a class="btn-outline-secondary" href="?q={{ result }}">
-                            <button type="button" class="btn btn-outline-secondary">Назад</button>
-                        </a>
-                        {% endif %}
                         {% if result.has_next %}
-                        <a class="btn-outline-secondary" href="?q={{ result }}">
-                            <button type="button" class="btn btn-outline-secondary">Дальше</button>
-                        </a>
+                            <a href="?q={{ add_res }}" class="btn btn-success btn-rounded">еще…</a>
                         {% endif %}
                     </span>
                 </div>
