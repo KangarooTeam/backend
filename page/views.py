@@ -20,8 +20,8 @@ def index(request, tag_slug=None):
 
     if len(posts) > 0:
         last_post = posts[0]
-        if len(posts) >= 5:
-            paginator = Paginator(posts, 5)
+        if len(posts) >= 30:
+            paginator = Paginator(posts, 30)
         else:
             paginator = Paginator(posts, len(posts))
         page = request.GET.get('page')
@@ -43,6 +43,7 @@ def search(request):
      q = request.GET['q']
      res = [i for i in q.split()]
      cash = []
+     result = False
      if q:
          result = []
          for j in res:
@@ -51,11 +52,22 @@ def search(request):
                  result.append(Articles.objects.filter(
                      Q(title__icontains=j)|
                      Q(body__icontains=j)))
+     if len(result) >= 1:
+         paginator = Paginator(result, 1)
      else:
-         result = False
+         paginator = Paginator(result, len(result))
+     page = request.GET.get('q')
+     try:
+         result = paginator.page(page)
+     except PageNotAnInteger:
+         # If page is not an integer, deliver first page.
+         result = paginator.page(1)
+     except EmptyPage:
+         # If page is out of range (e.g. 9999), deliver last page of results.
+         result = paginator.page(paginator.num_pages)
 
-     return render_to_response ('homepage/search.html',
-                              {"result": result, 'q': q})
+     return render_to_response('homepage/search.html', locals(),
+                               {"result": result, 'q': q})
 
 
 def handler404(request):
