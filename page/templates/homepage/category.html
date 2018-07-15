@@ -12,7 +12,7 @@
     {% recursetree genres %}
         <li>{{ category_tree }}
         <!-- /* не работает url "target_category" pk=target.pk  */ -->
-            <a href="#">{{ node.name }}</a>
+            <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}
