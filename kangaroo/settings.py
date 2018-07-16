@@ -94,12 +94,8 @@ if not DEBUG:
     ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'test',
-            'USER': 'postgres',
-            'PASSWORD': 'qwerty123',
-            'HOST': 'localhost',
-            'PORT': '5433',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase'
         }
     }
 
