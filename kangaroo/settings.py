@@ -91,7 +91,7 @@ except ImportError:
     pass
 
 if not DEBUG:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['kangaroo.pythonanywhere.com']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
