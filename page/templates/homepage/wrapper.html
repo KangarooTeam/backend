@@ -58,7 +58,7 @@
                     <div class="col-md-12">
                             <div class="jumbotron p-3 p-md-5 rounded">
                                     <div class="col-md-8">
-                                        <h1 class="display-4 font-italic">Последняя новость</h1>
+                                        <h1 class="display-4 font-italic">Последнее событие</h1>
                                     <p class="">{{ last_post.date }}</p>
                                     <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
                                     <hr class="lead my-3">
@@ -77,12 +77,12 @@
 
                 <div class="col-md-2">
                     <div class="banner">
-                        <h1>Здесь могла бы быть ваша реклама</h1>
+                        <h1><!-- реклама --></h1>
                     </div>
                 </div>
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="pb-3 mb-4 font-italic border-bottom">Новости</h3>
+                    <h3 class="pb-3 mb-4 font-italic border-bottom">Лента</h3>
                     {% if posts %}
                     {% for post in posts %}
                     <div class="blog-post">
@@ -113,9 +113,7 @@
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                        <a class="btn-outline-secondary" href="?page={{ posts.previous_page_number }}">
-                            <button type="button" class="btn btn-outline-secondary">Назад</button>
-                        </a>
+                            <a href="?page={{ posts.previous_page_number }}" class="btn btn-outline-secondary btn-rounded">Назад</a>
                         {% endif %}
                         <span class="current">
                             <button type="button" class="btn btn-outline-secondary">
@@ -123,9 +121,7 @@
                             </button>
                         </span>
                         {% if posts.has_next %}
-                        <a class="btn-outline-secondary" href="?page={{ posts.next_page_number }}">
-                            <button type="button" class="btn btn-outline-secondary">Дальше</button>
-                        </a>
+                            <a href="?page={{ posts.next_page_number }}" class="btn btn-outline-secondary btn-rounded">Далее</a>
                         {% endif %}
                     </span>
                 </div>
