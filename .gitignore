@@ -3,3 +3,4 @@ venv
 page/static/media/images
 ./local_settings.py
 ./settings.py
+mydatabase

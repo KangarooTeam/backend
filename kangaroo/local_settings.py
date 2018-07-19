@@ -1,15 +1,15 @@
 from kangaroo.settings import *
 
 ALLOWED_HOSTS = ['*']
-DEBUG = False
+DEBUG = True
 INSTALLED_APPS
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'test',
             'USER': 'postgres',
-            'PASSWORD': 'qwerty123',
+            'PASSWORD': 'q319546',
             'HOST': 'localhost',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
