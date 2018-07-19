@@ -30,9 +30,9 @@ SECRET_KEY = 'mfg6qs)ie8ov_#je!e5yoyz(zfpkwo+b2=ev=-q(ybbg4m!xi+'
 # Application definition
 
 
-MEDIA_URL = '/static/media/'
-STATIC_ROOT = 'D:/python/kangaroo/backend/page/static/'
-MEDIA_ROOT = 'D:/python/kangaroo/backend/page/static//media/'
+MEDIA_URL = '/static/media'
+STATIC_ROOT =  os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 INSTALLED_APPS = [
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'kangaroo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DEBUG = True
+DEBUG = False
 
 try:
     from kangaroo.local_settings import *
@@ -139,4 +139,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')

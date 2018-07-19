@@ -1,6 +1,7 @@
 myvenv
 venv
 page/static/media/images
+page/migrations
 ./local_settings.py
 ./settings.py
 mydatabase

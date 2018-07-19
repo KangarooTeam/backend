@@ -58,7 +58,8 @@ def search(request):
 
     if len(result) > 0:
         add_res = [i for i in result[-1]]
-        add_res = add_res[-1]
+        if len(add_res) > 1:
+            add_res = add_res[-1]
         if len(result) >= 30:
             paginator = Paginator(result, 30)
         else:
