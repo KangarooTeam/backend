@@ -30,8 +30,8 @@ SECRET_KEY = 'mfg6qs)ie8ov_#je!e5yoyz(zfpkwo+b2=ev=-q(ybbg4m!xi+'
 # Application definition
 
 
-MEDIA_URL = '/static/media'
-STATIC_ROOT =  os.path.join(BASE_DIR, "static")
+MEDIA_URL = '/static/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
