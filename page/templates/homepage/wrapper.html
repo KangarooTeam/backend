@@ -1,5 +1,6 @@
 <head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kangaroo</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -37,38 +38,6 @@
         </nav>
     </div>
     </div>
-    <!--<nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <div class="row justify-content-md-cente">
-                <div class="col-md-12">
-                        <a class="navbar-brand" href="{% url 'index' %}">Kangaroo</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{% url 'index' %}">Главная</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'developers' %}">О нас</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
-                                </li>
-                            </ul>
-                            <form class="form-inline my-2 my-lg-0" action="/search" method="get">
-                                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Ведите запрос" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
-                            </form>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </nav> -->
-
     {% block content %}
     <main>
         <div class=container>
