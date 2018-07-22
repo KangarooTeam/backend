@@ -33,7 +33,7 @@ def index(request, tag_slug=None):
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             posts = paginator.page(paginator.num_pages)
-    return render(request, 'homepage/wrapper.html', locals(), {'posts': posts, "last_post": last_post})
+    return render(request, 'homepage/wrapper.html', {'posts': posts, "last_post": last_post})
 
 
 def post_detail(request, pk):
