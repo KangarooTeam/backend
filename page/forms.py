@@ -1,9 +1,16 @@
 from django import forms
 
-from .models import Articles
+from django.contrib.auth.models import User
 
-class PostForm(forms.ModelForm):
-
+class UserForm(forms.ModelForm):
+    email = forms.CharField(max_length=100, required=True)
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
-        model = Articles
-        fields = ('title', 'text',)
+        model = User
+        fields = ('username', 'password', 'first_name', 'last_name', 'email')
+
+class UserFormForEdit(forms.ModelForm):
+    email = forms.CharField(max_length=100, required=True)
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')

@@ -8,11 +8,12 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages, auth
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.views.generic.base import View
-from django import forms
 from django.db.models import Q
 import re
 from taggit.models import Tag
 
+from django.contrib.auth.decorators import login_required
+from page.forms import UserForm, UserFormForEdit
 
 def index(request, tag_slug=None):
     posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')
@@ -34,7 +35,6 @@ def index(request, tag_slug=None):
             # If page is out of range (e.g. 9999), deliver last page of results.
             posts = paginator.page(paginator.num_pages)
     return render(request, 'homepage/wrapper.html', {'posts': posts, "last_post": last_post})
-
 
 def post_detail(request, pk):
     post = get_object_or_404(Articles, pk=pk)
@@ -104,3 +104,24 @@ def show_genres(request):
 def move_category(request, id):
     target = get_object_or_404(Genre, pk=id)
     return render(request, 'homepage/category.html', {'target': target})
+
+def sign_up(request):
+    user_form = UserForm()
+
+    if request.method == "POST":
+        user_form = UserForm(request.POST)
+
+        if user_form.is_valid():
+            new_user = User.objects.create_user(**user_form.cleaned_data)
+            new_user.save()
+
+            login(request, authenticate(
+                username = user_form.cleaned_data['username'],
+                password = user_form.cleaned_data['password']
+            ))
+
+            return redirect(index)
+
+    return render(request, 'accounts/sign_up.html', {
+        'user_form': user_form,
+    })

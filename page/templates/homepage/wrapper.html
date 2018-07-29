@@ -23,9 +23,9 @@
                 <a href="#" class="text-muted">
                     <a href="{% url 'search_list' %}" style="color: #6c757d;"><i class="fa fa-search" style="font-size:30; color: ##6c757d; margin-right: 15px;"></i></a>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Войти</a>
+                <a class="btn btn-sm btn-outline-secondary" href="{% url 'page-sign-in' %}">Войти</a>
             </div>
-        </div> 
+        </div>
     </header>
     <hr style="margin: 0">
     <div class="nav-scroller py-1 mb-2">
@@ -52,10 +52,12 @@
             </div>
         </div>
 
+        <a href="{% url 'page-sign-out' %}">Выйти</a>
+
         {% if last_post %}
         <div class="container">
             <div class="row justify-content-md-center">
-                
+
                     <div class="col-md-12">
                             <div class="jumbotron p-3 p-md-5 rounded">
                                     <div class="col-md-8">
@@ -65,13 +67,13 @@
                                     <hr class="lead my-3">
                                     <p>{{ last_post.body | truncatechars:300}}</p>
                                     <p class="lead mb-0">
-                                            
+
                                         <a class="font-weight-bold" href="{% url 'post_detail' pk=last_post.pk %}">Подробнее...</a>
                                     </p>
                                     </div>
                                 </div>
                     </div>
-                
+
             </div>
         </div>
         {% endif %}<div class="container">

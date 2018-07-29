@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from . import views
 
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
      url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
@@ -11,5 +12,9 @@ urlpatterns = [
      url(r'^target_category/(?P<pk>[0-9]+)/$', views.move_category, name="target_category"),
      url(r'^developers/$', views.Information.developers, name="developers"),
      url(r'^contacts/$', views.Contacts.contacts, name='contacts'),
-     ]
 
+     url(r'^sign-in/$', auth_views.login, {'template_name': 'accounts/sign_in.html'}, name='page-sign-in'),
+     url(r'^sign-out/$', auth_views.logout, {'next_page': '/'}, name='page-sign-out'),
+
+     url(r'^sign-up', views.sign_up, name='page-sign-up')
+     ]
