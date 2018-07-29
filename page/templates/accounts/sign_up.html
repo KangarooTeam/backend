@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form user_form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    {% endbuttons %}
+</form>
+<a href="{% url 'page-sign-in' %}">У Вас есть профиль?</a>
+{% endblock %}

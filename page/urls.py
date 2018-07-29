@@ -16,5 +16,5 @@ urlpatterns = [
      url(r'^sign-in/$', auth_views.login, {'template_name': 'accounts/sign_in.html'}, name='page-sign-in'),
      url(r'^sign-out/$', auth_views.logout, {'next_page': '/'}, name='page-sign-out'),
 
-     url(r'^sign-up', views.sign_up, name='page-sign-up')
+     url(r'^sign-up', views.sign_up, name='page-sign-up'),
      ]

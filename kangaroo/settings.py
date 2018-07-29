@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'taggit',
     'rest_framework',
     'mptt',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [

@@ -14,6 +14,7 @@ from taggit.models import Tag
 
 from django.contrib.auth.decorators import login_required
 from page.forms import UserForm, UserFormForEdit
+from django.contrib.auth.models import User
 
 def index(request, tag_slug=None):
     posts = Articles.objects.filter(date__lte=timezone.now()).order_by('-date')

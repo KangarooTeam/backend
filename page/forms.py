@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=100, required=True)
-    password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput(), label='Пароль')
     class Meta:
         model = User
         fields = ('username', 'password', 'first_name', 'last_name', 'email')
