@@ -13,7 +13,7 @@ import re
 from taggit.models import Tag
 
 from django.contrib.auth.decorators import login_required
-from page.forms import UserForm, UserFormForEdit
+from page.forms import UserForm, UserFormForEdit, ArticleForm
 from django.contrib.auth.models import User
 
 def index(request, tag_slug=None):
@@ -125,4 +125,17 @@ def sign_up(request):
 
     return render(request, 'accounts/sign_up.html', {
         'user_form': user_form,
+    })
+
+@login_required(login_url='/sign-in/')
+def add_post(request):
+    form = ArticleForm()
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect(index)
+    return render(request, 'accounts/add_post.html', {
+        'form': form
     })

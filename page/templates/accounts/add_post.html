@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <button type="submit" class="btn btn-primary">Добавить</button>
+</form>
+{% endblock%}

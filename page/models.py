@@ -30,7 +30,7 @@ class Articles(models.Model):
     title = models.CharField(max_length=120)
     body = models.TextField()
     date = models.DateTimeField()
-    author = models.CharField(max_length=100, verbose_name="Автор", null=True, blank=True)
+    author = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Автор", null=True, blank=True)
     tags = TaggableManager()
     category = TreeForeignKey(Genre, blank=True, null=True, related_name="cat")
     image = models.ImageField(
