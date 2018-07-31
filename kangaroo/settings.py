@@ -28,12 +28,15 @@ SECRET_KEY = 'mfg6qs)ie8ov_#je!e5yoyz(zfpkwo+b2=ev=-q(ybbg4m!xi+'
 
 
 # Application definition
+_PATH = os.path.abspath(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(_PATH, 'static', 'media')
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
-
-MEDIA_URL = '/static/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(_PATH, 'media')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
