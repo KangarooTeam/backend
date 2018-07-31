@@ -32,7 +32,7 @@ class Articles(models.Model):
     tags = TaggableManager()
     category = TreeForeignKey(Genre, blank=True, null=True, related_name="cat")
     image = models.ImageField(
-        blank=True, upload_to='',
+        blank=True, upload_to='page/images',
         help_text='150x150px',
         verbose_name='Ссылка картинки'
     )
