@@ -63,7 +63,7 @@
                                     <p class="">{{ last_post.date }}</p>
                                     <p class="lead">{{ last_post.title | truncatechars:100 }}</p>
                                     <hr class="lead my-3">
-                                    <p>{{ last_post.body | truncatechars:300}}</p>
+                                    <p>{{ last_post.body | safe | truncatechars:300}}</p>
                                     <p class="lead mb-0">
                                             
                                         <a class="font-weight-bold" href="{% url 'post_detail' pk=last_post.pk %}">Подробнее...</a>
@@ -90,7 +90,7 @@
                         <h2 class="blog-post-title">{{ post.title }}</h2>
                         <p class="blog-post-meta">{{ post.date }}
                             {% if post.author %}| <i>{{ post.author }}</i>{% endif %}</p>
-                        <p>{{ post.body | truncatechars:300}}</p>
+                        <p>{{ post.body | safe | truncatechars:300}}</p>
                     <div align="right"><a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-rounded"> Это круто!</a>
                         <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-info btn-rounded">Читать...</a>
                         </div></div>
