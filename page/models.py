@@ -4,6 +4,7 @@ from django import forms
 from taggit.managers import TaggableManager
 from mptt.models import MPTTModel, TreeForeignKey
 import mptt
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Genre(MPTTModel):
     name = models.CharField(max_length=50, unique=True)
@@ -26,7 +27,7 @@ mptt.register(Genre, order_insertion_by=['name'])
 
 class Articles(models.Model):
     title = models.CharField(max_length=120)
-    body = models.TextField()
+    body =  RichTextUploadingField(blank=True, default='')
     date = models.DateTimeField()
     author = models.CharField(max_length=100, verbose_name="Автор", null=True, blank=True)
     tags = TaggableManager()

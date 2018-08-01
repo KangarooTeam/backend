@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'taggit',
     'rest_framework',
     'mptt',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -134,10 +136,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [
-    STATICFILE_DIR,
-]
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+       'default': {
+           'toolbar':[['Source', 'Link', 'Unlink', 'SpecialChar', 'Image', 'CodeSnippet']],
+           'height': 400,
+           'width': 900,
+           'removePlugins': 'stylesheetparser',
+           'extraPlugins': 'codesnippet',
+       },
+    }
